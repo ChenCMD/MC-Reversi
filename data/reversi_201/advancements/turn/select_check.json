@@ -1,0 +1,28 @@
+{
+    "display": {
+        "title": "カーソルを殴ったことをチェック",
+        "description": "",
+        "icon": {
+            "item": "minecraft:debug_stick"
+        },
+        "background": "minecraft:textures/block/glass.png",
+        "frame": "task",
+        "show_toast": false,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+        "onAttack": {
+            "trigger": "minecraft:player_hurt_entity",
+            "conditions": {
+                "entity": {
+                    "type": "minecraft:slime",
+                    "nbt": "{Tags:[\"NoVisible_201\",\"CursorEntity_201\",\"Entity_201\"]}"
+                }
+            }
+        }
+    },
+    "rewards": {
+        "function": "reversi_201:turn/select"
+    }
+}
