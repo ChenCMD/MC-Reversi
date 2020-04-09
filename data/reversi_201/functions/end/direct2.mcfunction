@@ -1,12 +1,12 @@
 #集計
-    execute at @e[tag=AggregateEntity_201] positioned ~ ~-1.9 ~ if entity @e[tag=Stone_White_201,distance=..0.25] run scoreboard players add $StoneWhite ReversiData_201 1
-    execute at @e[tag=AggregateEntity_201] positioned ~ ~-1.9 ~ if entity @e[tag=Stone_Black_201,distance=..0.25] run scoreboard players add $StoneBlack ReversiData_201 1
+    execute at @e[tag=AggregateEntity_201] positioned ~ ~ ~ if block ~ ~ ~ white_concrete run scoreboard players add $StoneWhite ReversiData_201 1
+    execute at @e[tag=AggregateEntity_201] positioned ~ ~ ~ if block ~ ~ ~ black_concrete run scoreboard players add $StoneBlack ReversiData_201 1
 #actionbarに表示
     title @a actionbar [{"score":{"objective":"ReversiData_201","name":"$StoneWhite"},"color":"white","bold":true},{"text":" : ","color":"gold","bold":false},{"score":{"objective":"ReversiData_201","name":"$StoneBlack"},"color":"gray","bold":true}]
 #演出
-    execute at @e[tag=AggregateEntity_201] positioned ~ ~-1.9 ~ if entity @e[tag=Stone_White_201,distance=..0.25] run particle dust 1 1 1 1 ~ ~2.2 ~ 0.2 0 0.2 1 8
-    execute at @e[tag=AggregateEntity_201] positioned ~ ~-1.9 ~ if entity @e[tag=Stone_Black_201,distance=..0.25] run particle dust 0 0 0 1 ~ ~2.2 ~ 0.2 0 0.2 1 8
-    execute at @e[tag=AggregateEntity_201] positioned ~ ~-1.9 ~ if entity @e[tag=Stone_201,distance=..0.25] run playsound minecraft:block.note_block.bell block @a ~ ~-20 ~ 0.5 1.5 1
+    execute at @e[tag=AggregateEntity_201] positioned ~ ~ ~ if block ~ ~ ~ white_concrete run particle dust 1 1 1 1 ~ 40.6 ~ 0.2 0 0.2 1 8
+    execute at @e[tag=AggregateEntity_201] positioned ~ ~ ~ if block ~ ~ ~ black_concrete run particle dust 0 0 0 1 ~ 40.6 ~ 0.2 0 0.2 1 8
+    execute at @e[tag=AggregateEntity_201] positioned ~ ~ ~ if block ~ ~ ~ #reversi_201:stone_block run playsound minecraft:block.note_block.bell block @a ~ 40.6 ~ 0.5 1.5 1
 #次のマス
     execute as @e[tag=AggregateEntity_201] at @s run tp @s ^ ^ ^1
 #次の列

@@ -1,14 +1,10 @@
-    execute at @e[tag=BoardPos_201] run fill ~-1 ~ ~-1 ~8 ~ ~8 air
-    kill @e[tag=BoardPos_201]
-#ボード準備
-    execute align xyz run summon armor_stand ~0.5 ~0.5 ~0.5 {Fire:1200s,Tags:["BoardPos_201","Entity_201"],Marker:1b,Invisible:1b,Invulnerable:1b,NoGravity:1b}
-    execute at @e[tag=BoardPos_201] run fill ~-1 ~ ~-1 ~8 ~ ~8 polished_diorite_slab[type=bottom]
-    execute at @e[tag=BoardPos_201] run fill ~ ~ ~ ~1 ~ ~1 andesite_slab[type=bottom]
-    execute at @e[tag=BoardPos_201] run setblock ~0 ~ ~0 granite_slab[type=bottom]
-    execute at @e[tag=BoardPos_201] run setblock ~1 ~ ~1 granite_slab[type=bottom]
-    execute at @e[tag=BoardPos_201] run clone ~ ~ ~ ~1 ~ ~1 ~0 ~ ~2
-    execute at @e[tag=BoardPos_201] run clone ~ ~ ~ ~1 ~ ~1 ~2 ~ ~0
-    execute at @e[tag=BoardPos_201] run clone ~ ~ ~ ~1 ~ ~1 ~2 ~ ~2
-    execute at @e[tag=BoardPos_201] run clone ~ ~ ~ ~3 ~ ~3 ~0 ~ ~4
-    execute at @e[tag=BoardPos_201] run clone ~ ~ ~ ~3 ~ ~3 ~4 ~ ~0
-    execute at @e[tag=BoardPos_201] run clone ~ ~ ~ ~3 ~ ~3 ~4 ~ ~4
+execute at @e[tag=BoardSize_201] run fill 2064 40 16 ~1 40 ~1 air
+execute at @e[tag=BoardSize_201] run fill 2064 0 16 ~1 10 ~1 air
+kill @e[tag=BoardSize_201]
+summon armor_stand 2065 11 17 {Rotation:[-45f],Marker:1b,Invisible:1b,Tags:[BoardSize_201]}
+scoreboard players operation #BoardSizeC ReversiData_201 = $BoardSize ReversiData_201
+execute as @e[tag=BoardSize_201] at @s run function reversi_201:size_set_loop
+execute at @e[tag=BoardSize_201] run fill 2064 40 16 ~1 40 ~1 polished_diorite_slab[type=bottom]
+execute at @e[tag=BoardSize_201] run fill 2064 0 16 ~1 10 ~1 polished_diorite_slab[type=bottom]
+execute at @e[tag=BoardSize_201] run clone 2065 11 17 ~ 11 ~ 2065 40 17
+execute at @e[tag=BoardSize_201] run fill 2065 0 17 ~ 10 ~ air
