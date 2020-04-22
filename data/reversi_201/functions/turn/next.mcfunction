@@ -5,8 +5,8 @@
         execute if entity @e[tag=CursorEntity_201] if score #TurnColor ReversiData_201 matches 0 run playsound entity.experience_orb.pickup player @a[tag=Player_Black_201] ~ ~ ~ 1 1.2 1
         execute if entity @e[tag=CursorEntity_201] if score #TurnColor ReversiData_201 matches 1 run playsound entity.experience_orb.pickup player @a[tag=Player_White_201] ~ ~ ~ 1 1.2 1
     #ターンのプレイヤー以外カーソル殴れなくする
-        execute if entity @e[tag=CursorEntity_201] if score #TurnColor ReversiData_201 matches 0 run effect give @a[tag=!Player_Black_201] minecraft:weakness 999999 99 true
-        execute if entity @e[tag=CursorEntity_201] if score #TurnColor ReversiData_201 matches 1 run effect give @a[tag=!Player_White_201] minecraft:weakness 999999 99 true
+        execute if entity @e[tag=CursorEntity_201] if score #TurnColor ReversiData_201 matches 0 run effect give @a[tag=!Player_Black_201] weakness 999999 99 true
+        execute if entity @e[tag=CursorEntity_201] if score #TurnColor ReversiData_201 matches 1 run effect give @a[tag=!Player_White_201] weakness 999999 99 true
     #カーソル見えるように
         execute if entity @e[tag=CursorEntity_201] as @e[tag=NoVisible_201] at @s run tp @s ~ ~1.5 ~
         #execute if entity @e[tag=CursorEntity_201] as @e[tag=SelectItem_201] run data modify entity @s Glowing set value 1b

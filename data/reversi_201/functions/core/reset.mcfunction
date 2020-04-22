@@ -6,3 +6,4 @@
     #scoreboard players set $StoneQuantityMAX ReversiData_201 64
     scoreboard players reset $StoneWhite ReversiData_201
     scoreboard players reset $StoneBlack ReversiData_201
+    function reversi_201:core/corner_summon
