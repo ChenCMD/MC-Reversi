@@ -27,4 +27,4 @@
     #黒にカーソルセット = スタート
         scoreboard players set $vsAI ReversiData_201 -1
         scoreboard players set $TurnColor ReversiData_201 0
-        schedule function reversi_201:turn/check/1 1s
+        schedule function reversi_201:turn/turn_checker 1s

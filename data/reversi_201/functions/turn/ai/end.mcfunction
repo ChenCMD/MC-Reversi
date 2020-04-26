@@ -15,7 +15,7 @@
         #次のターンにする
             execute unless entity @e[tag=Candidate_201] unless score $StoneBlack ReversiData_201 matches 0 unless score $StoneWhite ReversiData_201 matches 0 run scoreboard players add $TurnColor ReversiData_201 1
             execute unless entity @e[tag=Candidate_201] unless score $StoneBlack ReversiData_201 matches 0 unless score $StoneWhite ReversiData_201 matches 0 run scoreboard players operation $TurnColor ReversiData_201 %= #2 num_000
-            execute unless entity @e[tag=Candidate_201] unless score $StoneBlack ReversiData_201 matches 0 unless score $StoneWhite ReversiData_201 matches 0 run function reversi_201:turn/check/1
+            execute unless entity @e[tag=Candidate_201] unless score $StoneBlack ReversiData_201 matches 0 unless score $StoneWhite ReversiData_201 matches 0 run function reversi_201:turn/player/search/1
 #CursorEntityがある = 置けるマスがある ときの処理
     execute as @e[tag=Candidate_201] run scoreboard players set $min OpennessData_201 100
     execute as @e[tag=Candidate_201] run scoreboard players operation $min OpennessData_201 < @s OpennessData_201

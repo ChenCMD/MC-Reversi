@@ -1,2 +1,2 @@
 scoreboard players operation #TickThroughputC ReversiData_201 = $TickThroughput ReversiData_201
-execute as @e[tag=CheckEntity_201] at @s run function reversi_201:turn/check/2
+execute as @e[tag=CheckEntity_201] at @s run function reversi_201:turn/player/search/1

@@ -1,1 +1,0 @@
-execute as @e[tag=CheckEntity_201] at @s run function reversi_201:turn/ai/search

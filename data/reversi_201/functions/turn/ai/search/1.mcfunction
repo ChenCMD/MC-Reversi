@@ -1,8 +1,8 @@
 #execute run particle end_rod ~ 41 ~ 0 0 0 0 5 force
 #チェックシステム
     #そのマスが石を置けるかのチェック+開放度
-        execute if score $TurnColor ReversiData_201 matches 0 positioned ~ 10 ~ unless block ~ 10 ~ #reversi_201:stone_block run function reversi_201:turn/ai/check-openness/black
-        execute if score $TurnColor ReversiData_201 matches 1 positioned ~ 10 ~ unless block ~ 10 ~ #reversi_201:stone_block run function reversi_201:turn/ai/check-openness/white
+        execute if score $TurnColor ReversiData_201 matches 0 positioned ~ 10 ~ unless block ~ 10 ~ #reversi_201:stone_block run function reversi_201:turn/ai/check/black
+        execute if score $TurnColor ReversiData_201 matches 1 positioned ~ 10 ~ unless block ~ 10 ~ #reversi_201:stone_block run function reversi_201:turn/ai/check/white
     #isSuccess付いてたら開放度確認
         execute if entity @s[tag=isSuccess_201] at @s run summon area_effect_cloud ~ 10 ~ {Age:-2147483648,Duration:-1,WaitTime:-2147483648,Tags:["Candidate_201","Entity_201"]}
         execute if entity @s[tag=isSuccess_201] at @s run scoreboard players operation @e[tag=Candidate_201,distance=..0.5] OpennessData_201 = $Tmp OpennessData_201
@@ -25,5 +25,5 @@
     execute at @s if block ~ ~ ~ white_stained_glass run kill @s
 #つぎ
     scoreboard players remove #TickThroughputC ReversiData_201 1
-    execute at @s if score #TickThroughputC ReversiData_201 matches 1.. unless block ~ ~ ~ white_stained_glass run function reversi_201:turn/ai/search
-    execute at @s if score #TickThroughputC ReversiData_201 matches ..0 unless block ~ ~ ~ white_stained_glass run schedule function reversi_201:turn/ai/search_recursive_manager 1t
+    execute at @s if score #TickThroughputC ReversiData_201 matches 1.. unless block ~ ~ ~ white_stained_glass run function reversi_201:turn/ai/search/1
+    execute at @s if score #TickThroughputC ReversiData_201 matches ..0 unless block ~ ~ ~ white_stained_glass run schedule function reversi_201:turn/ai/search/recursive_manager 1t

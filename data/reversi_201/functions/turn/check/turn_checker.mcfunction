@@ -1,2 +1,0 @@
-execute unless score $vsAI ReversiData_201 = $TurnColor ReversiData_201 run function reversi_201:turn/check/2_recursive_manager
-execute if score $vsAI ReversiData_201 = $TurnColor ReversiData_201 run function reversi_201:turn/ai/search_recursive_manager
