@@ -1,22 +1,20 @@
 #execute as @e[tag=CheckEntity_201] at @s run particle end_rod ~ 41 ~ 0 0 0 0 5 force
 #チェックシステム
     #そのマスが石を置けるかのチェック+開放度
-        execute if score #TurnColor ReversiData_201 matches 0 as @e[tag=CheckEntity_201] at @s positioned ~ 5 ~ unless block ~ 5 ~ #reversi_201:stone_block run function reversi_201:turn/ai/check-openness/black
-        execute if score #TurnColor ReversiData_201 matches 1 as @e[tag=CheckEntity_201] at @s positioned ~ 5 ~ unless block ~ 5 ~ #reversi_201:stone_block run function reversi_201:turn/ai/check-openness/white
+        execute if score #TurnColor ReversiData_201 matches 0 as @e[tag=CheckEntity_201] at @s positioned ~ 10 ~ unless block ~ 10 ~ #reversi_201:stone_block run function reversi_201:turn/ai/check-openness/black
+        execute if score #TurnColor ReversiData_201 matches 1 as @e[tag=CheckEntity_201] at @s positioned ~ 10 ~ unless block ~ 10 ~ #reversi_201:stone_block run function reversi_201:turn/ai/check-openness/white
     #isSuccess付いてたら開放度確認
-        execute as @e[tag=CheckEntity_201,tag=isSuccess_201] at @s run summon area_effect_cloud ~ 5 ~ {Age:-2147483648,Duration:-1,WaitTime:-2147483648,Tags:[Candidate_201,Entity_201]}
+        execute as @e[tag=CheckEntity_201,tag=isSuccess_201] at @s run summon area_effect_cloud ~ 10 ~ {Age:-2147483648,Duration:-1,WaitTime:-2147483648,Tags:["Candidate_201","Entity_201"]}
         execute as @e[tag=CheckEntity_201,tag=isSuccess_201] at @s run scoreboard players operation @e[tag=Candidate_201,distance=..0.5] OpennessData_201 = #Tmp OpennessData_201
     #4隅補正
-        #execute as @e[tag=CheckEntity_201,tag=isSuccess_201] at @s if entity @e[distance=..0.5,tag=PreCorner_201] at @e[distance=..1.5,tag=Corner_201] if block ~ ~ ~ air at @s run say 補正(+)かけたよ
-        execute as @e[tag=CheckEntity_201,tag=isSuccess_201] at @s if entity @e[distance=..0.5,tag=PreCorner_201] at @e[distance=..1.5,tag=Corner_201] if block ~ ~ ~ air at @s run scoreboard players add @e[tag=Candidate_201,distance=..0.5] OpennessData_201 16
-        #execute as @e[tag=CheckEntity_201,tag=isSuccess_201] at @s if entity @e[distance=..0.5,tag=Corner_201] run say 補正(-)かけたよ
-        execute as @e[tag=CheckEntity_201,tag=isSuccess_201] at @s if entity @e[distance=..0.5,tag=Corner_201] run scoreboard players remove @e[tag=Candidate_201,distance=..0.5] OpennessData_201 16
+        execute as @e[tag=CheckEntity_201,tag=isSuccess_201] at @s if entity @e[tag=PreCorner_201,distance=..0.5] at @e[tag=Corner_201,distance=..1.5] if block ~ ~ ~ air at @s run scoreboard players add @e[tag=Candidate_201,distance=..0.5] OpennessData_201 16
+        execute as @e[tag=CheckEntity_201,tag=isSuccess_201] at @s if entity @e[tag=Corner_201,distance=..0.5] run scoreboard players remove @e[tag=Candidate_201,distance=..0.5] OpennessData_201 16
 
         scoreboard players set #Tmp OpennessData_201 0
     #Lv2~処理
-        #execute if entity @e[tag=CheckEntity_201,tag=isSuccess_201] run scoreboard players operation #Recursion-depth ReversiData_201 = $AI-Lv ReversiData_201
-        #execute if entity @e[tag=CheckEntity_201,tag=isSuccess_201] run scoreboard players remove #Recursion-depth ReversiData_201 1
-        #execute as @e[tag=CheckEntity_201,tag=isSuccess_201] if score #Recursion-depth ReversiData_201 matches 1.. at @s run function reversi_201:turn/ai/loop
+        execute if entity @e[tag=CheckEntity_201,tag=isSuccess_201] run scoreboard players operation #Recursion-depth ReversiData_201 = $AI-Lv ReversiData_201
+        execute if entity @e[tag=CheckEntity_201,tag=isSuccess_201] run scoreboard players remove #Recursion-depth ReversiData_201 1
+        execute as @e[tag=CheckEntity_201,tag=isSuccess_201] if score #Recursion-depth ReversiData_201 matches 1.. at @s run function reversi_201:turn/ai/lv2
 
         tag @e[tag=CheckEntity_201] remove isSuccess_201
 #次のマス

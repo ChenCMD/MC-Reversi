@@ -4,7 +4,7 @@
 # + + + + + +    Z+
 # + + + + + +  X+  X-
 # + + + + + P    Z-
-summon armor_stand 2065 5 17 {Marker:1b,Invisible:1b,Tags:[Board_201,Entity_201]}
+summon armor_stand 2065 10 17 {Marker:1b,Invisible:1b,Tags:[Board_201,Entity_201]}
 
 execute as @e[tag=Board_201] store result entity @s Pos[0] double 0.001 run data get entity @e[limit=1,tag=BoardPos_201] Pos[0] 1000
 execute as @e[tag=Board_201] store result entity @s Pos[2] double 0.001 run data get entity @e[limit=1,tag=BoardPos_201] Pos[2] 1000

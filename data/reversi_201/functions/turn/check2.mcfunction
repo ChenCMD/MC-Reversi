@@ -1,7 +1,7 @@
 #チェックシステム
     #そのマスが石を置けるかのチェック
-        execute if score #TurnColor ReversiData_201 matches 0 as @e[tag=CheckEntity_201] at @s positioned ~ 5 ~ unless block ~ 5 ~ #reversi_201:stone_block run function reversi_201:turn/check3b
-        execute if score #TurnColor ReversiData_201 matches 1 as @e[tag=CheckEntity_201] at @s positioned ~ 5 ~ unless block ~ 5 ~ #reversi_201:stone_block run function reversi_201:turn/check3w
+        execute if score #TurnColor ReversiData_201 matches 0 as @e[tag=CheckEntity_201] at @s positioned ~ 10 ~ unless block ~ 10 ~ #reversi_201:stone_block run function reversi_201:turn/check3b
+        execute if score #TurnColor ReversiData_201 matches 1 as @e[tag=CheckEntity_201] at @s positioned ~ 10 ~ unless block ~ 10 ~ #reversi_201:stone_block run function reversi_201:turn/check3w
     #isSuccess付いてたらカーソルセット
         execute if entity @e[tag=CheckEntity_201,tag=isSuccess_201] at @e[tag=CheckEntity_201] run summon slime ~ 38 ~ {Silent:1b,Tags:[NoVisible_201,CursorEntity_201,Entity_201],Size:1,NoAI:1b,Team:NoCollision_201,ActiveEffects:[{Id:14b,Amplifier:0b,Duration:19999980,ShowParticles:0b},{Id:11b,Amplifier:4b,Duration:19999980,ShowParticles:0b}]}
         execute if entity @e[tag=CheckEntity_201,tag=isSuccess_201] if score #TurnColor ReversiData_201 matches 0 at @e[tag=CheckEntity_201] run summon item ~ 39 ~ {Tags:[NoVisible_201,SelectItem_201,Entity_201],Item:{id:black_carpet,Count:1b},PickupDelay:32767s,Age:-32768s,NoGravity:1b,Glowing:0b}
