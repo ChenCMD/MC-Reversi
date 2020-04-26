@@ -18,8 +18,8 @@
             execute unless entity @e[tag=CursorEntity_201] if score $StoneBlack ReversiData_201 matches 0 run playsound entity.villager.no ambient @a ~ ~ ~ 1 1 1
             execute unless entity @e[tag=CursorEntity_201] if score $StoneWhite ReversiData_201 matches 0 run playsound entity.villager.no ambient @a ~ ~ ~ 1 1 1
         #終了処理へ
-            execute unless entity @e[tag=CursorEntity_201] if score $StoneBlack ReversiData_201 matches 0 run schedule function reversi_201:end/direct 4s
-            execute unless entity @e[tag=CursorEntity_201] if score $StoneWhite ReversiData_201 matches 0 run schedule function reversi_201:end/direct 4s
+            execute unless entity @e[tag=CursorEntity_201] if score $StoneBlack ReversiData_201 matches 0 run schedule function reversi_201:end/direct 3s
+            execute unless entity @e[tag=CursorEntity_201] if score $StoneWhite ReversiData_201 matches 0 run schedule function reversi_201:end/direct 3s
     #0じゃない = たまたま置けない時の処理
         #メッセージとサウンド
             execute unless entity @e[tag=CursorEntity_201] unless score $StoneBlack ReversiData_201 matches 0 unless score $StoneWhite ReversiData_201 matches 0 run title @a actionbar {"text":"置ける場所がないためターンがスキップされました","color":"red"}
@@ -27,4 +27,4 @@
         #次のターンにする
             execute unless entity @e[tag=CursorEntity_201] unless score $StoneBlack ReversiData_201 matches 0 unless score $StoneWhite ReversiData_201 matches 0 run scoreboard players add $TurnColor ReversiData_201 1
             execute unless entity @e[tag=CursorEntity_201] unless score $StoneBlack ReversiData_201 matches 0 unless score $StoneWhite ReversiData_201 matches 0 run scoreboard players operation $TurnColor ReversiData_201 %= #2 num_000
-            execute unless entity @e[tag=CursorEntity_201] unless score $StoneBlack ReversiData_201 matches 0 unless score $StoneWhite ReversiData_201 matches 0 run function reversi_201:turn/player/search/1
+            execute unless entity @e[tag=CursorEntity_201] unless score $StoneBlack ReversiData_201 matches 0 unless score $StoneWhite ReversiData_201 matches 0 run function reversi_201:turn/turn_checker

@@ -8,4 +8,4 @@
     execute unless score $StoneQuantity ReversiData_201 = $StoneQuantityMAX ReversiData_201 unless score $vsAI ReversiData_201 = $TurnColor ReversiData_201 run function reversi_201:turn/player/search/recursive_manager
     execute unless score $StoneQuantity ReversiData_201 = $StoneQuantityMAX ReversiData_201 if score $vsAI ReversiData_201 = $TurnColor ReversiData_201 run function reversi_201:turn/ai/search/recursive_manager
 #埋まってたら終了処理へ
-    execute if score $StoneQuantity ReversiData_201 = $StoneQuantityMAX ReversiData_201 run schedule function reversi_201:end/direct 5s
+    execute if score $StoneQuantity ReversiData_201 = $StoneQuantityMAX ReversiData_201 run schedule function reversi_201:end/direct 3s
