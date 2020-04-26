@@ -21,5 +21,5 @@
     setblock ~ ~ ~ black_concrete
     summon armor_stand ~ 38.6 ~ {ArmorItems:[{},{},{},{id:"minecraft:black_concrete",Count:1b}],Fire:32767s,Tags:[fire_000,stone_201,Entity_201],Marker:1b,Invisible:1b}
 #カーソル更新
-    scoreboard players set #TurnColor ReversiData_201 1
-    function reversi_201:turn/check
+    scoreboard players set $TurnColor ReversiData_201 1
+    function reversi_201:turn/check/1

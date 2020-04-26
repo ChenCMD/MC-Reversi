@@ -25,7 +25,6 @@
         scoreboard players operation $StoneQuantityMAX ReversiData_201 = $BoardSize ReversiData_201
         scoreboard players operation $StoneQuantityMAX ReversiData_201 *= $BoardSize ReversiData_201
     #黒にカーソルセット = スタート
-        scoreboard players set #vsAI ReversiData_201 1
-        execute unless score $AI-Lv ReversiData_201 = $AI-Lv ReversiData_201 run scoreboard players set $AI-Lv ReversiData_201 1
-        scoreboard players set #TurnColor ReversiData_201 0
-        schedule function reversi_201:turn/check 1s
+        scoreboard players set $vsAI ReversiData_201 1
+        scoreboard players set $TurnColor ReversiData_201 0
+        schedule function reversi_201:turn/check/1 1s

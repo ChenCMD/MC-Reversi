@@ -1,8 +1,6 @@
-# 使い方
-# $StoneQuantityMAX ReversiData_201 に盤面のサイズ(真ん中含む石の置ける数)をセット
-# function reversi_201:board_set を初回のみ実行
-# tag Player_White_201 / Player_Black_201を対戦プレイヤーに付与する
-# function reversi_201:start を実行するとゲーム開始
+#define score_holder $TickThroughput
+#define score_holder #TickThroughputC
+#define score_holder $TurnColor
 team add NoCollision_201
 team modify NoCollision_201 collisionRule never
 team modify NoCollision_201 seeFriendlyInvisibles false
