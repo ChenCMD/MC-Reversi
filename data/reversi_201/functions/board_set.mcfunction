@@ -9,9 +9,6 @@ execute at @e[tag=BoardSize_201] run fill 2064 0 16 ~1 10 ~1 white_stained_glass
 execute at @e[tag=BoardSize_201] run clone 2065 11 17 ~ 11 ~ 2065 40 17
 execute at @e[tag=BoardSize_201] run fill 2065 0 17 ~ 10 ~ air
 
-setblock 0.0 1.0 2.0 air
-setblock 0.0 1.0 2.0 air
-
 kill @e[tag=Corner_201]
 kill @e[tag=PreCorner_201]
 function reversi_201:core/corner_summon

@@ -1,4 +1,3 @@
-particle flame ~ 41 ~ 0 0 0 0 5 force
 #チェックシステム
     #そのマスが石を置けるかのチェック
         execute if score $TurnColor ReversiData_201 matches 0 positioned ~ 10 ~ unless block ~ 10 ~ #reversi_201:stone_block run function reversi_201:turn/player/check/black

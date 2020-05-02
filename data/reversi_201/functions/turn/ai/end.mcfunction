@@ -1,3 +1,5 @@
+#Checker kill
+    kill @e[limit=1,tag=Checker_201,tag=!InactiveChecker_201]
 #置けるマスがない時の処理
     #どちらかの石が0の時の処理
         #メッセージとサウンド
@@ -17,7 +19,4 @@
             execute unless entity @e[tag=Candidate_201] unless score $StoneBlack ReversiData_201 matches 0 unless score $StoneWhite ReversiData_201 matches 0 run scoreboard players operation $TurnColor ReversiData_201 %= #2 num_000
             execute unless entity @e[tag=Candidate_201] unless score $StoneBlack ReversiData_201 matches 0 unless score $StoneWhite ReversiData_201 matches 0 run function reversi_201:turn/turn_checker
 #CursorEntityがある = 置けるマスがある ときの処理
-    execute as @e[tag=Candidate_201] run scoreboard players set $min OpennessData_201 100
-    execute as @e[tag=Candidate_201] run scoreboard players operation $min OpennessData_201 < @s OpennessData_201
-    execute as @e[tag=Candidate_201] if score @s OpennessData_201 = $min OpennessData_201 run tag @s add StoneCandidate
-    execute as @e[sort=random,limit=1,tag=StoneCandidate] at @s run function reversi_201:turn/select_non_player
+    execute if entity @e[tag=Candidate_201] run function reversi_201:turn/ai/end_branch

@@ -18,10 +18,10 @@
         execute at @e[tag=Board_201] run setblock ~1 10 ~1 white_concrete
         execute at @e[tag=Board_201] run summon armor_stand ~1 38.6 ~1 {ArmorItems:[{},{},{},{id:"minecraft:white_concrete",Count:1b}],Fire:32767s,Tags:[fire_000,stone_201,Entity_201],Marker:1b,Invisible:1b}
         kill @e[tag=Board_201]
-
         scoreboard players set $StoneBlack ReversiData_201 2
         scoreboard players set $StoneWhite ReversiData_201 2
         scoreboard players set $StoneQuantity ReversiData_201 4
+    #石の最大数定義
         scoreboard players operation $StoneQuantityMAX ReversiData_201 = $BoardSize ReversiData_201
         scoreboard players operation $StoneQuantityMAX ReversiData_201 *= $BoardSize ReversiData_201
     #黒にカーソルセット = スタート

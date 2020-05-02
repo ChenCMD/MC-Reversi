@@ -1,0 +1,1 @@
+execute if score @s SortValue_201 = @e[sort=nearest,limit=1] SortValue_201 unless entity @s[distance=..0.5] run scoreboard players add @s SortValue_201 1
