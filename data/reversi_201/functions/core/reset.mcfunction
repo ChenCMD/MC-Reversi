@@ -3,9 +3,9 @@
     execute at @e[tag=BoardSize_201] run fill 2065 10 17 ~ 0 ~ air
     kill @e[tag=Entity_201,tag=!BoardPos_201]
     team empty NoCollision_201
-    #scoreboard players set $StoneQuantityMAX ReversiData_201 64
     scoreboard players reset $StoneWhite ReversiData_201
     scoreboard players reset $StoneBlack ReversiData_201
+    scoreboard players set #SkipFlag ReversiData_201 0
 
     execute unless score $TickThroughput ReversiData_201 = $TickThroughput ReversiData_201 run scoreboard players set $TickThroughput ReversiData_201 20
     execute unless score $AI-Lv ReversiData_201 = $AI-Lv ReversiData_201 run scoreboard players set $AI-Lv ReversiData_201 1
