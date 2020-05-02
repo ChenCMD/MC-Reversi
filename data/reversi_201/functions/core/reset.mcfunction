@@ -1,6 +1,6 @@
 #リセット
     execute as @e[tag=Entity_201,tag=!BoardPos_201] at @s run tp @s ~ ~-200 ~
-    execute at @e[tag=BoardSize_201] run fill 2065 10 17 ~ 10 ~ air
+    execute at @e[tag=BoardSize_201] run fill 2065 10 17 ~ 0 ~ air
     kill @e[tag=Entity_201,tag=!BoardPos_201]
     team empty NoCollision_201
     #scoreboard players set $StoneQuantityMAX ReversiData_201 64

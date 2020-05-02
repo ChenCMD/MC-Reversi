@@ -1,6 +1,5 @@
-#Checker kill
-    kill @e[limit=1,tag=Checker_201,tag=!InactiveChecker_201]
 #置けるマスがない時の処理
+    execute unless entity @e[tag=Candidate_201] run kill @e[limit=1,tag=Checker_201,tag=!InactiveChecker_201]
     #どちらかの石が0の時の処理
         #メッセージとサウンド
             execute unless entity @e[tag=Candidate_201] if score $StoneBlack ReversiData_201 matches 0 run title @a actionbar [{"text":"黒の石が無くなりました。詰みです。","color":"gold"}]

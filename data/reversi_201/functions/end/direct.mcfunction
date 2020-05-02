@@ -8,5 +8,5 @@
 #集計用えんちち
     execute at @e[tag=BoardPos_201] run summon armor_stand ~ 10 ~ {Tags:[AggregateEntity_201,Entity_201],Marker:1b,Invisible:1b,Invulnerable:1b,NoGravity:1b,Rotation:[-90.0f,0f]}
 #集計スタート
-    schedule function reversi_201:end/message 5s
-    schedule function reversi_201:end/direct2 7s
+    schedule function reversi_201:end/message 2s
+    schedule function reversi_201:end/direct2 4s
