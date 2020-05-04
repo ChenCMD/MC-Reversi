@@ -6,8 +6,10 @@
     #define score_holder $TurnColor 0が黒, 1が白 覚えようね
     #define score_holder $AI-Lv
     #define score_holder $vsAI -1が無し, 0が黒AI, 1が白AI 覚えようね
+    #define score_holder $StoneQuantity 石の配置数
     #define score_holder #RemainingDepth
     #define score_holder #MoreDepthTurnColor 0が黒, 1が白 覚えようね
+    #define score_holder #AI-LastAlgorithm
 
     #define tag BoardPos_201 盤面のX,Zが一番小さい座標を保存したEntity
     #define tag BoardSize_201 盤面サイズを保存したEntity

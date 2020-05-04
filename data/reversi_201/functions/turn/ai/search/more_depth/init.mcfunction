@@ -1,4 +1,3 @@
-#メモ: Lv1 checkerから実行
 #clone
     summon armor_stand 2065 ~ 17 {Marker:1b,Invisible:1b,Tags:[Board_201,Entity_201]}
     execute store result entity @e[limit=1,tag=Board_201] Pos[0] double 0.001 run data get entity @e[limit=1,tag=BoardSize_201] Pos[0] 1000

@@ -24,6 +24,10 @@
     #石の最大数定義
         scoreboard players operation $StoneQuantityMAX ReversiData_201 = $BoardSize ReversiData_201
         scoreboard players operation $StoneQuantityMAX ReversiData_201 *= $BoardSize ReversiData_201
+    #AIの行動変化タイミング定義
+        scoreboard players operation #AI-LastAlgorithm ReversiData_201 = $StoneQuantityMAX ReversiData_201
+        scoreboard players remove #AI-LastAlgorithm ReversiData_201 5
+        scoreboard players operation #AI-LastAlgorithm ReversiData_201 -= $AI-Lv ReversiData_201
     #黒にカーソルセット = スタート
         scoreboard players set $vsAI ReversiData_201 1
         scoreboard players set $TurnColor ReversiData_201 0

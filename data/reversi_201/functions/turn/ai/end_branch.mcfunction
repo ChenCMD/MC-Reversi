@@ -10,6 +10,6 @@
 #Lv2+処理
         execute if score #RemainingDepth ReversiData_201 matches 1.. run scoreboard players operation #MoreDepthTurnColor ReversiData_201 = $TurnColor ReversiData_201
     #5箇所に絞る
-        execute if score #RemainingDepth ReversiData_201 matches 1.. as @e[tag=Candidate_201] unless score @s SortValue_201 matches 0..4 run kill @s
+        execute if score #RemainingDepth ReversiData_201 matches 1.. if score $StoneQuantity ReversiData_201 < #AI-LastAlgorithm ReversiData_201 as @e[tag=Candidate_201] unless score @s SortValue_201 matches 0..4 run kill @s
     #盤面の複製と新しいCheckerの召喚
         execute if score #RemainingDepth ReversiData_201 matches 1.. as @e[tag=Checker_201] at @s run function reversi_201:turn/ai/search/more_depth/init

@@ -1,5 +1,8 @@
 #候補のEntity召喚する
     summon area_effect_cloud ~ ~ ~ {Rotation:[0f,90f],Age:-2147483648,Duration:-1,WaitTime:-2147483648,Tags:["Candidate_201","Entity_201"]}
+#49手以降の検査
+    execute if score $StoneQuantity ReversiData_201 matches 49.. if score $StoneQuantity ReversiData_201 < #AI-LastAlgorithm ReversiData_201 run function reversi_201:turn/ai/search/pre_last_checker
+#評価値の設定
     scoreboard players operation @e[tag=Candidate_201,distance=..0.5] Evaluation_201 = $Tmp Evaluation_201
 #4隅の補正入れる
     summon armor_stand ~ ~ ~ {Marker:1b,Invisible:1b,Tags:[TempY,Entity_201]}
@@ -9,5 +12,6 @@
     tp @e[limit=1,tag=TempY] ~ ~ ~
     execute positioned ~ 10 ~ if entity @e[tag=Corner_201,distance=..0.5] at @e[tag=TempY] run scoreboard players remove @e[tag=Candidate_201,distance=..0.5] Evaluation_201 16
     kill @e[limit=1,tag=TempY]
+    kill @e[limit=1,tag=Board_201]
 #リセット
     scoreboard players set $Tmp Evaluation_201 0

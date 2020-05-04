@@ -1,5 +1,5 @@
 #TestPoint吹き飛ばす
-    execute at @e[tag=TestPoint_201,tag=!InactiveTestPoint_201] positioned 2064 ~ 16 run summon armor_stand ~ ~ ~ {Tags:[TempY_201],Marker:1b,Invisible:1b}
+    execute at @e[tag=TestPoint_201,tag=!InactiveTestPoint_201] positioned 2064 ~ 16 run summon armor_stand ~ ~ ~ {Tags:[TempY_201,Entity_201],Marker:1b,Invisible:1b}
     tag @e[limit=1,tag=TestPoint_201,tag=!InactiveTestPoint_201] remove TestPoint_201
 #盤面clone
     execute at @e[tag=TempY_201] run summon armor_stand 2065 ~ 17 {Marker:1b,Invisible:1b,Tags:[Board_201,Entity_201]}
