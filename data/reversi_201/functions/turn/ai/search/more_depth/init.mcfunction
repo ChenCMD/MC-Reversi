@@ -10,9 +10,7 @@
         kill @s
     #新しいCheckerを召喚
         summon armor_stand 2065 ~-1 17 {Tags:[Checker_201,Entity_201],Marker:1b,Invisible:0b,Rotation:[-90.0f,0f]}
-        summon armor_stand ~ ~ ~ {Tags:[DEBUG],Marker:1b}
-        kill @e[tag=DEBUG]
-#先読みの盤面のターンが白か黒かの設定 #RemainingDepthが奇数なら相手の色のはず！！！！！！
+#先読みの盤面のターンが白か黒かの設定 #MoreDepthTurnColorが奇数なら相手の色のはず！！！！！！
     scoreboard players add #MoreDepthTurnColor ReversiData_201 1
     scoreboard players operation #MoreDepthTurnColor ReversiData_201 %= #2 num_000
 #実際に石を配置する
@@ -22,7 +20,7 @@
         tag @e[tag=Candidate_201,tag=!InactiveCandidate_201] add InactiveCandidate_201
     #clone済みの盤面に石を置く
         #盤面のターンの色に応じた石の配置
-            execute if score #MoreDepthTurnColor ReversiData_201 matches 0 as @e[limit=1,tag=TestPoint_201] at @s positioned ~ ~-1 ~ run function reversi_201:turn/ai/search/more_depth/stone/white/set
-            execute if score #MoreDepthTurnColor ReversiData_201 matches 1 as @e[limit=1,tag=TestPoint_201] at @s positioned ~ ~-1 ~ run function reversi_201:turn/ai/search/more_depth/stone/black/set
+            execute if score #MoreDepthTurnColor ReversiData_201 matches 0 as @e[limit=1,tag=TestPoint_201,tag=!InactiveTestPoint_201] at @s positioned ~ ~-1 ~ run function reversi_201:turn/ai/search/more_depth/stone/white/set
+            execute if score #MoreDepthTurnColor ReversiData_201 matches 1 as @e[limit=1,tag=TestPoint_201,tag=!InactiveTestPoint_201] at @s positioned ~ ~-1 ~ run function reversi_201:turn/ai/search/more_depth/stone/black/set
     #先読み用の再帰マネージャーを呼び出す
         function reversi_201:turn/ai/search/more_depth/recursive_manager

@@ -3,16 +3,14 @@ kill @e[limit=1,tag=Checker_201,tag=!InactiveChecker_201]
 #最良値は相手ターンの場合加算 自身ターンの場合減算
     #探索深度の加算
         scoreboard players add #RemainingDepth ReversiData_201 1
-        scoreboard players add #MoreDepthTurnColor ReversiData_201 1
-        scoreboard players operation #MoreDepthTurnColor ReversiData_201 %= #2 num_000
     #最良評価値を持つ一か所に絞る
         function reversi_201:turn/ai/search/sort/run
         #execute if score #RemainingDepth ReversiData_201 = $AI-Lv ReversiData_201 as @e[tag=Candidate_201,tag=!InactiveCandidate_201] run tellraw @a [{"nbt":"Pos","entity":"@s"},{"text":" Eval: "},{"score":{"objective":"Evaluation_201","name":"@s"}},{"text":" | Sort: "},{"score":{"objective":"SortValue_201","name":"@s"}}]
-        #execute as @e[tag=Candidate_201,tag=!InactiveCandidate_201] run tellraw @a [{"text":"Eval: "},{"score": {"name":"@s","objective": "Evaluation_201"}},{"text":" | Sort: "},{"score": {"name":"@s","objective": "SortValue_201"}}]
         execute as @e[tag=Candidate_201,tag=!InactiveCandidate_201] unless score @s SortValue_201 matches 0 run kill @s
     #最良評価値を上に渡す
-        execute unless score #RemainingDepth ReversiData_201 = $AI-Lv ReversiData_201 unless score #MoreDepthTurnColor ReversiData_201 = $vsAI ReversiData_201 run scoreboard players operation @e[limit=1,tag=Candidate_201,tag=TestPoint_201] Evaluation_201 -= @e[limit=1,tag=Candidate_201,tag=!InactiveCandidate_201] Evaluation_201
-        execute unless score #RemainingDepth ReversiData_201 = $AI-Lv ReversiData_201 if score #MoreDepthTurnColor ReversiData_201 = $vsAI ReversiData_201 run scoreboard players operation @e[limit=1,tag=Candidate_201,tag=TestPoint_201] Evaluation_201 += @e[limit=1,tag=Candidate_201,tag=!InactiveCandidate_201] Evaluation_201
+        #execute unless score #RemainingDepth ReversiData_201 = $AI-Lv ReversiData_201 at @e[limit=1,tag=Candidate_201,tag=TestPoint_201,tag=!InactiveTestPoint_201] run function debug/block_particle
+        execute unless score #RemainingDepth ReversiData_201 = $AI-Lv ReversiData_201 unless score #MoreDepthTurnColor ReversiData_201 = $vsAI ReversiData_201 run scoreboard players operation @e[limit=1,tag=Candidate_201,tag=TestPoint_201,tag=!InactiveTestPoint_201] Evaluation_201 -= @e[limit=1,tag=Candidate_201,tag=!InactiveCandidate_201] Evaluation_201
+        execute unless score #RemainingDepth ReversiData_201 = $AI-Lv ReversiData_201 if score #MoreDepthTurnColor ReversiData_201 = $vsAI ReversiData_201 run scoreboard players operation @e[limit=1,tag=Candidate_201,tag=TestPoint_201,tag=!InactiveTestPoint_201] Evaluation_201 += @e[limit=1,tag=Candidate_201,tag=!InactiveCandidate_201] Evaluation_201
     #掘ったタグ
         tag @e[limit=1,tag=TestPoint_201,tag=!AlreadyTestPoint_201,tag=!InactiveTestPoint_201] add AlreadyTestPoint_201
     #石の配置

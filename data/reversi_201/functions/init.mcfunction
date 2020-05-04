@@ -1,4 +1,6 @@
 #VSCode Extension : Datapack Helper Plus Define
+    #define storage reversi_201:logs
+
     #define score_holder $TickThroughput
     #define score_holder #TickThroughputC
     #define score_holder $TurnColor 0が黒, 1が白 覚えようね

@@ -1,10 +1,10 @@
 #チェックシステム
     #そのマスが石を置けるかのチェック+開放度
         tag @s remove isSuccess_201
-        execute if score $TurnColor ReversiData_201 matches 0 positioned ~ ~ ~ unless block ~ ~ ~ #reversi_201:stone_block run function reversi_201:turn/ai/check/black
-        execute if score $TurnColor ReversiData_201 matches 1 positioned ~ ~ ~ unless block ~ ~ ~ #reversi_201:stone_block run function reversi_201:turn/ai/check/white
+        execute if score #MoreDepthTurnColor ReversiData_201 matches 0 positioned ~ ~ ~ unless block ~ ~ ~ #reversi_201:stone_block run function reversi_201:turn/ai/check/black
+        execute if score #MoreDepthTurnColor ReversiData_201 matches 1 positioned ~ ~ ~ unless block ~ ~ ~ #reversi_201:stone_block run function reversi_201:turn/ai/check/white
     #isSuccess付いてたら開放度確認
-        execute if entity @s[tag=isSuccess_201] run function reversi_201:turn/ai/search/success
+        execute if entity @s[tag=isSuccess_201] run function reversi_201:turn/ai/search/more_depth/success
     #次のマス
         tp @s ^ ^ ^1
     #次の列
