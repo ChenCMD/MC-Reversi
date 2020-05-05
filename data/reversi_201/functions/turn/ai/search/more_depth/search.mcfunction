@@ -1,3 +1,4 @@
+#summon falling_block ~ ~ ~ {BlockState:{Name:"minecraft:gold_block"},NoGravity:1b,Time:599}
 #チェックシステム
     #そのマスが石を置けるかのチェック
         tag @s remove isSuccess_201

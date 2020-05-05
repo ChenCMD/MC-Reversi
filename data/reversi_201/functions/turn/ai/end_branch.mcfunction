@@ -1,8 +1,10 @@
 #AILvのコピーと1減算
     scoreboard players operation #RemainingDepth ReversiData_201 = $AI-Lv ReversiData_201
+    execute if score $StoneQuantity ReversiData_201 >= #AI-LastAlgorithm ReversiData_201 run scoreboard players operation #RemainingDepth ReversiData_201 = #LastDepth ReversiData_201
     scoreboard players remove #RemainingDepth ReversiData_201 1
 #候補の評価ソート
     function reversi_201:turn/ai/search/sort/run
+execute unless entity @e[limit=1,tag=Candidate_201,scores={SortValue_201=1..}] run scoreboard players set #RemainingDepth ReversiData_201 0
 #Lv1の時は1箇所に絞ってそのまま石置く
     execute if score #RemainingDepth ReversiData_201 matches ..0 run kill @e[limit=1,tag=Checker_201,tag=!InactiveChecker_201]
     execute if score #RemainingDepth ReversiData_201 matches ..0 as @e[tag=Candidate_201] unless score @s SortValue_201 matches 0..0 run kill @s
