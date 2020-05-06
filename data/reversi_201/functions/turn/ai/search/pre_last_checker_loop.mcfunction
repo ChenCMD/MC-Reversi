@@ -3,8 +3,8 @@
         execute if score #MoreDepthTurnColor ReversiData_201 matches 0 positioned ~ ~ ~ unless block ~ ~ ~ #reversi_201:stone_block run function reversi_201:turn/player/check/black
         execute if score #MoreDepthTurnColor ReversiData_201 matches 1 positioned ~ ~ ~ unless block ~ ~ ~ #reversi_201:stone_block run function reversi_201:turn/player/check/white
     #isSuccess付いてたらカーソルセット
-        execute if score #MoreDepthTurnColor ReversiData_201 = $vsAI ReversiData_201 if entity @s[tag=isSuccess_201] run scoreboard players remove $Tmp Evaluation_201 1
-        execute unless score #MoreDepthTurnColor ReversiData_201 = $vsAI ReversiData_201 if entity @s[tag=isSuccess_201] run scoreboard players add $Tmp Evaluation_201 1
+        execute if score #MoreDepthTurnColor ReversiData_201 = $vsAI ReversiData_201 if entity @s[tag=isSuccess_201] run scoreboard players remove #Tmp Evaluation_201 1
+        execute unless score #MoreDepthTurnColor ReversiData_201 = $vsAI ReversiData_201 if entity @s[tag=isSuccess_201] run scoreboard players add #Tmp Evaluation_201 1
         tag @s remove isSuccess_201
 #次のマス
     tp @s ^ ^ ^1
