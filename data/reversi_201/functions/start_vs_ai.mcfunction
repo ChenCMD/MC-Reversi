@@ -1,34 +1,27 @@
 #リセット処理
-    function reversi_201:core/reset
+    function reversi_201:reset
 #開始
     #判定消すチームに入れる
         team join NoCollision_201 @a[tag=Player_Black_201]
         team join NoCollision_201 @a[tag=Player_White_201]
     #初期石配置
-        summon armor_stand 2065 10 17 {Rotation:[-45.0f,0f],Marker:1b,Invisible:1b,Tags:[Board_201,Entity_201]}
-        scoreboard players operation #BoardSizeC ReversiData_201 = $BoardSize ReversiData_201
-        scoreboard players operation #BoardSizeC ReversiData_201 /= #2 num_000
-        execute as @e[tag=Board_201] at @s run function reversi_201:core/size_set_loop
-        execute at @e[tag=Board_201] run setblock ~0 10 ~0 white_stained_glass
-        execute at @e[tag=Board_201] run summon armor_stand ~0 38.6 ~0 {ArmorItems:[{},{},{},{id:"minecraft:white_concrete",Count:1b}],Fire:32767s,Tags:[fire_000,stone_201,Entity_201],Marker:1b,Invisible:1b}
-        execute at @e[tag=Board_201] run setblock ~0 10 ~1 black_stained_glass
-        execute at @e[tag=Board_201] run summon armor_stand ~0 38.6 ~1 {ArmorItems:[{},{},{},{id:"minecraft:black_concrete",Count:1b}],Fire:32767s,Tags:[fire_000,stone_201,Entity_201],Marker:1b,Invisible:1b}
-        execute at @e[tag=Board_201] run setblock ~1 10 ~0 black_stained_glass
-        execute at @e[tag=Board_201] run summon armor_stand ~1 38.6 ~0 {ArmorItems:[{},{},{},{id:"minecraft:black_concrete",Count:1b}],Fire:32767s,Tags:[fire_000,stone_201,Entity_201],Marker:1b,Invisible:1b}
-        execute at @e[tag=Board_201] run setblock ~1 10 ~1 white_stained_glass
-        execute at @e[tag=Board_201] run summon armor_stand ~1 38.6 ~1 {ArmorItems:[{},{},{},{id:"minecraft:white_concrete",Count:1b}],Fire:32767s,Tags:[fire_000,stone_201,Entity_201],Marker:1b,Invisible:1b}
-        kill @e[tag=Board_201]
+        setblock 2069 10 20 white_stained_glass
+        summon armor_stand 2069 38.6 20 {ArmorItems:[{},{},{},{id:"minecraft:white_concrete",Count:1b}],Fire:32767s,Tags:[fire_000,stone_201,Entity_201],Marker:1b,Invisible:1b}
+        setblock 2069 10 21 black_stained_glass
+        summon armor_stand 2069 38.6 21 {ArmorItems:[{},{},{},{id:"minecraft:black_concrete",Count:1b}],Fire:32767s,Tags:[fire_000,stone_201,Entity_201],Marker:1b,Invisible:1b}
+        setblock 2068 10 20 black_stained_glass
+        summon armor_stand 2068 38.6 20 {ArmorItems:[{},{},{},{id:"minecraft:black_concrete",Count:1b}],Fire:32767s,Tags:[fire_000,stone_201,Entity_201],Marker:1b,Invisible:1b}
+        setblock 2068 10 21 white_stained_glass
+        summon armor_stand 2068 38.6 21 {ArmorItems:[{},{},{},{id:"minecraft:white_concrete",Count:1b}],Fire:32767s,Tags:[fire_000,stone_201,Entity_201],Marker:1b,Invisible:1b}
         scoreboard players set $StoneBlack ReversiData_201 2
         scoreboard players set $StoneWhite ReversiData_201 2
         scoreboard players set $StoneQuantity ReversiData_201 4
     #石の最大数定義
-        scoreboard players operation $StoneQuantityMAX ReversiData_201 = $BoardSize ReversiData_201
-        scoreboard players operation $StoneQuantityMAX ReversiData_201 *= $BoardSize ReversiData_201
+        scoreboard players set $StoneQuantityMAX ReversiData_201 64
     #AIの行動変化タイミング定義
-        scoreboard players operation #AI-LastAlgorithm ReversiData_201 = $StoneQuantityMAX ReversiData_201
-        scoreboard players remove #AI-LastAlgorithm ReversiData_201 3
+        scoreboard players set #AI-LastAlgorithm ReversiData_201 61
         scoreboard players operation #AI-LastAlgorithm ReversiData_201 -= $AI-Lv ReversiData_201
-        scoreboard players operation #LastDepth ReversiData_201 = $StoneQuantityMAX ReversiData_201
+        scoreboard players set #LastDepth ReversiData_201 64
         scoreboard players operation #LastDepth ReversiData_201 -= #AI-LastAlgorithm ReversiData_201
     #黒にカーソルセット = スタート
         scoreboard players set $vsAI ReversiData_201 1
