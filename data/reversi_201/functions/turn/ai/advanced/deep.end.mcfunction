@@ -2,9 +2,9 @@ kill @s
 scoreboard players set $LastBoardPredict Evaluation_201 0
 scoreboard players remove #RemainingDepth ReversiData_201 1
 #置けるマスがない時の処理 最悪値を持つダミー召喚してbackの実行
-    execute unless entity @e[tag=Candidate_201,tag=!InactiveCandidate_201] as @e[tag=Checker_201] at @s run summon minecraft:area_effect_cloud 2065 ~ 18 {Rotation:[0f,90f],Age:-2147483648,Duration:-1,WaitTime:-2147483648,Tags:[Candidate_201,DummyCandidate_201]}
+    execute unless entity @e[tag=Candidate_201,tag=!InactiveCandidate_201] at @s run summon minecraft:area_effect_cloud 2065 ~ 18 {Rotation:[0f,90f],Age:-2147483648,Duration:-1,WaitTime:-2147483648,Tags:[Candidate_201,DummyCandidate_201]}
     execute if entity @e[tag=DummyCandidate_201] run scoreboard players set @e[tag=DummyCandidate_201] Evaluation_201 16
-    execute if entity @e[tag=DummyCandidate_201] run function reversi_201:turn/ai/advanced/deep.back
+    execute if entity @e[tag=DummyCandidate_201] run scoreboard players operation #RemainingDepthC ReversiData_201 >< #RemainingDepth ReversiData_201
 #CursorEntityがある = 置けるマスがある ときの処理
     #一番最後まで読んだ後最良値を返しつつ一つ戻って他の候補の先の盤面を掘る処理
         execute if entity @e[tag=Candidate_201,tag=!InactiveCandidate_201] if score #RemainingDepth ReversiData_201 matches ..0 run schedule function reversi_201:turn/ai/advanced/deep.back 1t

@@ -1,4 +1,5 @@
 #最良値は相手ターンの場合加算 自身ターンの場合減算
+        execute if entity @e[tag=Candidate_201,tag=DummyCandidate_201,tag=!InactiveCandidate_201] run scoreboard players operation #RemainingDepth ReversiData_201 >< #RemainingDepthC ReversiData_201
     #探索深度の加算
         scoreboard players add #RemainingDepth ReversiData_201 1
     #最良評価値を持つ一か所に絞る
