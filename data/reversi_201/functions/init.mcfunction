@@ -20,6 +20,8 @@
     #define tag InactiveTestPoint_201 上の盤面の現在掘ってる候補箇所
     #define tag AlreadyTestPoint_201 既に掘った候補箇所
 
+    #define storage reversi_201:logs
+
 team add NoCollision_201
 team modify NoCollision_201 collisionRule never
 team modify NoCollision_201 seeFriendlyInvisibles false

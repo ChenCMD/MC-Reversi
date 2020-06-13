@@ -1,3 +1,6 @@
+    # #DEBUG log
+    # data merge storage reversi_201:logs {tmp:"reversi_201:turn/ai/advanced/deep.another_point"}
+    # function reversi_201:debug/log.put
 #TestPoint吹き飛ばす
     execute at @e[tag=TestPoint_201,tag=!InactiveTestPoint_201] positioned 2064 ~ 16 run summon armor_stand ~ ~ ~ {Tags:[TempY_201,Entity_201],Marker:1b,Invisible:1b}
     tag @e[limit=1,tag=TestPoint_201,tag=!InactiveTestPoint_201] remove TestPoint_201

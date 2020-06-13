@@ -13,7 +13,10 @@
     execute if score $StoneQuantity ReversiData_201 < #AI-LastAlgorithm ReversiData_201 positioned ~ 10 ~ if entity @e[tag=Corner_201,distance=..0.5] at @e[tag=TempY] run scoreboard players remove @e[tag=Candidate_201,distance=..0.5] Evaluation_201 16
     execute if score $StoneQuantity ReversiData_201 < #AI-LastAlgorithm ReversiData_201 run kill @e[limit=1,tag=TempY]
     execute if score $StoneQuantity ReversiData_201 < #AI-LastAlgorithm ReversiData_201 run kill @e[limit=1,tag=Board_201]
-##DEBUG ホログラムsummon
-#execute as @e[tag=Candidate_201,distance=..0.5] run function reversi_201:turn/common/debug_display
+# #DEBUG ホログラムsummon
+# execute as @e[tag=Candidate_201,distance=..0.5] run function reversi_201:debug/hologram.summon
+# #DEBUG log
+# data merge storage reversi_201:logs {tmp:"reversi_201:turn/ai/advanced/deep.success"}
+# function reversi_201:debug/log.put
 #リセット
     scoreboard players set #Tmp Evaluation_201 0

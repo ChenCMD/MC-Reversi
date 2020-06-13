@@ -1,3 +1,6 @@
+    # #DEBUG log
+    # data merge storage reversi_201:logs {tmp:"reversi_201:turn/ai/advanced/deep.init"}
+    # function reversi_201:debug/log.put
 #clone
     clone 2065 ~ 17 2072 ~ 24 2065 ~-1 17
 #新しいCheckerを召喚

@@ -1,3 +1,6 @@
+    # #DEBUG log
+    # data merge storage reversi_201:logs {tmp:"reversi_201:turn/ai/advanced/deep.end"}
+    # function reversi_201:debug/log.put
 kill @s
 scoreboard players set $LastBoardPredict Evaluation_201 0
 scoreboard players remove #RemainingDepth ReversiData_201 1
@@ -11,8 +14,8 @@ scoreboard players remove #RemainingDepth ReversiData_201 1
     #まだ掘る処理
         #5箇所まで絞る
             execute if entity @e[tag=Candidate_201,tag=!InactiveCandidate_201] if score #RemainingDepth ReversiData_201 matches 1.. run function reversi_201:turn/common/sort.run
-                ##DEBUG ホログラムkill
-                #execute if entity @e[tag=Candidate_201,tag=!InactiveCandidate_201] if score #RemainingDepth ReversiData_201 matches 1.. if score $StoneQuantity ReversiData_201 < #AI-LastAlgorithm ReversiData_201 as @e[tag=Candidate_201] unless score @s SortValue_201 matches 0..4 at @s positioned ~ ~35.5 ~ run kill @e[limit=1,tag=Display,distance=..0.25]
+                # #DEBUG ホログラムkill
+                # execute if entity @e[tag=Candidate_201,tag=!InactiveCandidate_201] if score #RemainingDepth ReversiData_201 matches 1.. if score $StoneQuantity ReversiData_201 < #AI-LastAlgorithm ReversiData_201 as @e[tag=Candidate_201] unless score @s SortValue_201 matches 0..4 at @s positioned ~ ~7.5 ~ run kill @e[limit=1,tag=Display,distance=..0.25]
             execute if entity @e[tag=Candidate_201,tag=!InactiveCandidate_201] if score #RemainingDepth ReversiData_201 matches 1.. if score $StoneQuantity ReversiData_201 < #AI-LastAlgorithm ReversiData_201 as @e[tag=Candidate_201] unless score @s SortValue_201 matches 0..4 run kill @s
         #無効化
             execute if entity @e[tag=Candidate_201,tag=!InactiveCandidate_201] if score #RemainingDepth ReversiData_201 matches 1.. run tag @e[limit=1,tag=TestPoint_201,tag=!InactiveTestPoint_201] add InactiveTestPoint_201
