@@ -23,8 +23,8 @@
         tag @e[limit=1,tag=TestPoint_201,tag=!AlreadyTestPoint_201,tag=!InactiveTestPoint_201] add AlreadyTestPoint_201
     #石の配置
         #if ((StoneQuantity >= AI-LastAlgorithm && RemainingDepth == LastDepth) || (StoneQuantity < AI-LastAlgorithm && RemainingDepth == AI-Lv))
-        execute if score $StoneQuantity ReversiData_201 < #AI-LastAlgorithm ReversiData_201 if score #RemainingDepth ReversiData_201 = $AI-Lv ReversiData_201 run schedule function reversi_201:turn/select_non_player 2t
-        execute if score $StoneQuantity ReversiData_201 >= #AI-LastAlgorithm ReversiData_201 if score #RemainingDepth ReversiData_201 = #LastDepth ReversiData_201 run schedule function reversi_201:turn/select_non_player 2t
+        execute if score $StoneQuantity ReversiData_201 < #AI-LastAlgorithm ReversiData_201 if score #RemainingDepth ReversiData_201 = $AI-Lv ReversiData_201 run schedule function reversi_201:turn/select_non_player 20t
+        execute if score $StoneQuantity ReversiData_201 >= #AI-LastAlgorithm ReversiData_201 if score #RemainingDepth ReversiData_201 = #LastDepth ReversiData_201 run schedule function reversi_201:turn/select_non_player 20t
     #さよなら～
         #if ((StoneQuantity >= AI-LastAlgorithm && RemainingDepth != LastDepth) || (StoneQuantity < AI-LastAlgorithm && RemainingDepth != AI-Lv))
             # #DEBUG ホログラムkill

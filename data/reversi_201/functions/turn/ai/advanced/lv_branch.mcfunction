@@ -11,7 +11,7 @@
     execute unless entity @e[limit=1,tag=Candidate_201,scores={SortValue_201=1..}] run scoreboard players set #RemainingDepth ReversiData_201 0
 #Lv1 処理
     execute if score #RemainingDepth ReversiData_201 matches ..0 as @e[tag=Candidate_201] unless score @s SortValue_201 matches 0..0 run kill @s
-    execute if score #RemainingDepth ReversiData_201 matches ..0 run schedule function reversi_201:turn/select_non_player 2t
+    execute if score #RemainingDepth ReversiData_201 matches ..0 run schedule function reversi_201:turn/select_non_player 20t
 #Lv2+処理
     execute if score #RemainingDepth ReversiData_201 matches 1.. run scoreboard players operation #MoreDepthTurnColor ReversiData_201 = $TurnColor ReversiData_201
         # #DEBUG ホログラムkill

@@ -29,3 +29,4 @@ team modify NoCollision_201 seeFriendlyInvisibles false
 scoreboard objectives add ReversiData_201 dummy {"text":"リバーシのあれこれ保存用"}
 scoreboard objectives add Evaluation_201 dummy {"text":"評価値"}
 scoreboard objectives add SortValue_201 dummy {"text":"評価値ソート"}
+scoreboard objectives add StoneSkin_201 dummy {"text":"石の見た目の選択"}

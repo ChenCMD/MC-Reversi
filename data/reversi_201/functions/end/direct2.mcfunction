@@ -4,8 +4,8 @@
 #actionbarに表示
     title @a actionbar [{"score":{"objective":"ReversiData_201","name":"$StoneWhite"},"color":"white","bold":true},{"text":" : ","color":"gold","bold":false},{"score":{"objective":"ReversiData_201","name":"$StoneBlack"},"color":"dark_gray","bold":true}]
 #演出
-    execute at @e[tag=AggregateEntity_201] positioned ~ ~ ~ if block ~ ~ ~ white_stained_glass run particle dust 1 1 1 1 ~ 40.6 ~ 0.2 0 0.2 1 8
-    execute at @e[tag=AggregateEntity_201] positioned ~ ~ ~ if block ~ ~ ~ black_stained_glass run particle dust 0 0 0 1 ~ 40.6 ~ 0.2 0 0.2 1 8
+    execute at @e[tag=AggregateEntity_201] positioned ~ ~ ~ if block ~ ~ ~ white_stained_glass run particle dust 1 1 1 1 ~ 41 ~ 0.2 0.4 0.2 1 12
+    execute at @e[tag=AggregateEntity_201] positioned ~ ~ ~ if block ~ ~ ~ black_stained_glass run particle dust 0 0 0 1 ~ 41 ~ 0.2 0.4 0.2 1 12
     execute at @e[tag=AggregateEntity_201] positioned ~ ~ ~ if block ~ ~ ~ #reversi_201:stone_block run playsound block.note_block.bell block @a ~ 40.6 ~ 0.5 1.5 1
 #次のマス
     execute as @e[tag=AggregateEntity_201] at @s run tp @s ~1 ~ ~

@@ -6,13 +6,13 @@
         team join NoCollision_201 @a[tag=Player_White_201]
     #初期石配置
         setblock 2069 10 20 white_stained_glass
-        summon armor_stand 2069 38.6 20 {ArmorItems:[{},{},{},{id:"minecraft:white_concrete",Count:1b}],Fire:32767s,Tags:[fire_000,stone_201,Entity_201],Marker:1b,Invisible:1b}
+        summon armor_stand 2069 38.6 20 {ArmorItems:[{},{},{},{id:"minecraft:white_concrete",Count:1b,tag:{CustomModelData:2002}}],Tags:[stone_201,Entity_201],NoGravity:1b,Invisible:1b,Invulnerable:1b}
         setblock 2069 10 21 black_stained_glass
-        summon armor_stand 2069 38.6 21 {ArmorItems:[{},{},{},{id:"minecraft:black_concrete",Count:1b}],Fire:32767s,Tags:[fire_000,stone_201,Entity_201],Marker:1b,Invisible:1b}
+        summon armor_stand 2069 38.6 21 {ArmorItems:[{},{},{},{id:"minecraft:black_concrete",Count:1b,tag:{CustomModelData:2002}}],Tags:[stone_201,Entity_201],NoGravity:1b,Invisible:1b,Invulnerable:1b}
         setblock 2068 10 20 black_stained_glass
-        summon armor_stand 2068 38.6 20 {ArmorItems:[{},{},{},{id:"minecraft:black_concrete",Count:1b}],Fire:32767s,Tags:[fire_000,stone_201,Entity_201],Marker:1b,Invisible:1b}
+        summon armor_stand 2068 38.6 20 {ArmorItems:[{},{},{},{id:"minecraft:black_concrete",Count:1b,tag:{CustomModelData:2002}}],Tags:[stone_201,Entity_201],NoGravity:1b,Invisible:1b,Invulnerable:1b}
         setblock 2068 10 21 white_stained_glass
-        summon armor_stand 2068 38.6 21 {ArmorItems:[{},{},{},{id:"minecraft:white_concrete",Count:1b}],Fire:32767s,Tags:[fire_000,stone_201,Entity_201],Marker:1b,Invisible:1b}
+        summon armor_stand 2068 38.6 21 {ArmorItems:[{},{},{},{id:"minecraft:white_concrete",Count:1b,tag:{CustomModelData:2002}}],Tags:[stone_201,Entity_201],NoGravity:1b,Invisible:1b,Invulnerable:1b}
         scoreboard players set $StoneBlack ReversiData_201 2
         scoreboard players set $StoneWhite ReversiData_201 2
         scoreboard players set $StoneQuantity ReversiData_201 4
