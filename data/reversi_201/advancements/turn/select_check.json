@@ -23,6 +23,6 @@
         }
     },
     "rewards": {
-        "function": "reversi_201:turn/select"
+        "function": "reversi_201:game/turn/select"
     }
 }

@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:empty",
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:debug_stick",
+                    "functions": [
+                        {
+                            "function": "minecraft:set_name",
+                            "name": [
+                                {
+                                    "score": {
+                                        "objective": "ReversiData_201",
+                                        "name": "#resolve"
+                                    },
+                                    "italic": false
+                                }
+                            ],
+                            "entity": "this"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

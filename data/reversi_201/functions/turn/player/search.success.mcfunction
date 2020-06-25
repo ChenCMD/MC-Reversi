@@ -1,4 +1,0 @@
-summon slime ~ 38 ~ {Silent:1b,Tags:[NoVisible_201,CursorEntity_201,Entity_201],Size:1,NoAI:1b,Team:NoCollision_201,ActiveEffects:[{Id:14b,Amplifier:0b,Duration:19999980,ShowParticles:0b},{Id:11b,Amplifier:4b,Duration:19999980,ShowParticles:0b}]}
-execute if score $TurnColor ReversiData_201 matches 0 run summon item ~ 39 ~ {Tags:[NoVisible_201,SelectItem_201,Entity_201],Item:{id:black_concrete,Count:1b,tag:{CustomModelData:2002}},PickupDelay:32767s,Age:-32768s,NoGravity:1b,Glowing:0b}
-execute if score $TurnColor ReversiData_201 matches 1 run summon item ~ 39 ~ {Tags:[NoVisible_201,SelectItem_201,Entity_201],Item:{id:white_concrete,Count:1b,tag:{CustomModelData:2002}},PickupDelay:32767s,Age:-32768s,NoGravity:1b,Glowing:0b}
-tag @s remove isSuccess_201
