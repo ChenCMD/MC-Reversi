@@ -4,7 +4,7 @@
 #メッセージ
     title @a[scores={playing_000=201}] times 0 100 20
     title @a[scores={playing_000=201}] title {"text":"GAME END!!","color":"yellow","bold":true}
-    playsound block.end_portal.spawn block @a[scores={playing_000=201}] ~ ~ ~ 1.1 1 1
+    playsound block.end_portal.spawn block @a[scores={playing_000=201}] ~ ~ ~ 0.5 1 1
 #羊の硬直
     execute if score $sheep ReversiData_201 matches 1 run function reversi_201:game/stone/sheep/respawn
 #集計用えんちち
