@@ -1,6 +1,6 @@
 #チェックシステム
     #そのマスが石を置けるかのチェック
-        execute if score $TurnColor ReversiData_201 matches 0 positioned ~ 10 ~ unless block ~ 10 ~ #reversi_201:stone_block run function reversi_201:game/turn/player/check.run
+        execute positioned ~ 10 ~ unless block ~ 10 ~ #reversi_201:stone_block run function reversi_201:game/turn/player/check.run
     #isSuccess付いてたらカーソルセット
         execute if entity @s[tag=isSuccess_201] run function reversi_201:game/turn/player/search.success
 #次のマス
