@@ -9,6 +9,8 @@
     #ターンのプレイヤー以外カーソル殴れなくする
         execute if entity @e[tag=CursorEntity_201] if score #TurnColor ReversiData_201 matches 0 run effect give @a[tag=!Player_Black_201,scores={playing_000=201}] weakness 999999 99 true
         execute if entity @e[tag=CursorEntity_201] if score #TurnColor ReversiData_201 matches 1 run effect give @a[tag=!Player_White_201,scores={playing_000=201}] weakness 999999 99 true
+    #長考 == TRUE の場合 長考時間の設定とカウントダウン
+        execute if entity @e[tag=CursorEntity_201] if score #Think ReversiData_201 matches 1 run function reversi_201:game/turn/player/long_think/decrement
     #カーソル見えるように
         execute if entity @e[tag=CursorEntity_201] run schedule function reversi_201:game/turn/player/cursor.move 1t
 #置けるマスがない時の処理

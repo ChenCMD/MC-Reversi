@@ -26,6 +26,16 @@ team add NoCollision_201
 team modify NoCollision_201 collisionRule never
 team modify NoCollision_201 seeFriendlyInvisibles false
 
+#define bossbar reversi_201:player1_201
+bossbar add reversi_201:player1_201 {"text":"黒 持ち時間","color":"dark_gray"}
+bossbar set reversi_201:player1_201 color purple
+bossbar set reversi_201:player1_201 style progress
+bossbar set reversi_201:player1_201 visible true
+#define bossbar reversi_201:player2_201
+bossbar add reversi_201:player2_201 {"text":"白 持ち時間","color":"white"}
+bossbar set reversi_201:player2_201 color white
+bossbar set reversi_201:player2_201 style progress
+bossbar set reversi_201:player2_201 visible true
 scoreboard objectives add ReversiData_201 dummy {"text":"リバーシのあれこれ保存用"}
 scoreboard objectives add Evaluation_201 dummy {"text":"評価値"}
 scoreboard objectives add SortValue_201 dummy {"text":"評価値ソート"}

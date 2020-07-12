@@ -9,8 +9,14 @@
     scoreboard players reset #StoneWhite ReversiData_201
     scoreboard players reset #StoneBlack ReversiData_201
     scoreboard players set #SkipFlag ReversiData_201 0
+    bossbar set reversi_201:player1_201 players
+    bossbar set reversi_201:player2_201 players
+    scoreboard players reset #Think.White ReversiData_201
+    scoreboard players reset #Think.Black ReversiData_201
+    scoreboard players reset #Think.Flag.Black ReversiData_201
+    scoreboard players reset #Think.Flag.White ReversiData_201
+    schedule clear reversi_201:game/turn/player/long_think/decrement
 
-    execute unless score $TickThroughput ReversiData_201 = $TickThroughput ReversiData_201 run scoreboard players set $TickThroughput ReversiData_201 128
-    execute unless score $AI-Lv ReversiData_201 = $AI-Lv ReversiData_201 run scoreboard players set $AI-Lv ReversiData_201 1
+    execute unless score $TickThroughput ReversiData_201 = $TickThroughput ReversiData_201 run scoreboard players set $TickThroughput ReversiData_201 24
     # #DEBUG log
     # data modify storage reversi_201:logs output set value []

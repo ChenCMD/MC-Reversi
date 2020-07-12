@@ -3,6 +3,7 @@
     scoreboard players set #StoneBlack ReversiData_201 0
 #メッセージ
     title @a[scores={playing_000=201}] times 0 100 20
+    title @a[scores={playing_000=201}] subtitle {"text":""}
     title @a[scores={playing_000=201}] title {"text":"GAME END!!","color":"yellow","bold":true}
     playsound block.end_portal.spawn block @a[scores={playing_000=201}] ~ ~ ~ 0.5 1 1
 #羊の硬直

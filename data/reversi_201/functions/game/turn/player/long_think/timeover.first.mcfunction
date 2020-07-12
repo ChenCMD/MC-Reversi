@@ -1,0 +1,9 @@
+execute if score #TurnColor ReversiData_201 matches 0 if score $Think.COUNT ReversiData_201 matches 1.. if score #Think.Black ReversiData_201 matches ..0 run tellraw @a[scores={playing_000=201}] [{"text":"持ち時間が無くなりました。\n秒読みを開始します。","color":"red"}]
+execute if score #TurnColor ReversiData_201 matches 1 if score $Think.COUNT ReversiData_201 matches 1.. if score #Think.White ReversiData_201 matches ..0 run tellraw @a[scores={playing_000=201}] [{"text":"持ち時間が無くなりました。\n秒読みを開始します。","color":"red"}]
+execute if score #TurnColor ReversiData_201 matches 0 if score $Think.COUNT ReversiData_201 matches 1.. if score #Think.Black ReversiData_201 matches ..0 run scoreboard players set #Think.Flag.Black ReversiData_201 1
+execute if score #TurnColor ReversiData_201 matches 1 if score $Think.COUNT ReversiData_201 matches 1.. if score #Think.White ReversiData_201 matches ..0 run scoreboard players set #Think.Flag.White ReversiData_201 1
+
+execute if score #TurnColor ReversiData_201 matches 0 if score $Think.COUNT ReversiData_201 matches 1.. if score #Think.Flag.Black ReversiData_201 matches 1 store result bossbar reversi_201:player1_201 value store result bossbar reversi_201:player1_201 max run scoreboard players operation #Think.Black ReversiData_201 = $Think.COUNT ReversiData_201
+execute if score #TurnColor ReversiData_201 matches 1 if score $Think.COUNT ReversiData_201 matches 1.. if score #Think.Flag.White ReversiData_201 matches 1 store result bossbar reversi_201:player2_201 value store result bossbar reversi_201:player2_201 max run scoreboard players operation #Think.White ReversiData_201 = $Think.COUNT ReversiData_201
+
+execute if score #TurnColor ReversiData_201 matches 1 unless score $Think.COUNT ReversiData_201 matches 1.. run function reversi_201:game/turn/player/long_think/timeover.second
