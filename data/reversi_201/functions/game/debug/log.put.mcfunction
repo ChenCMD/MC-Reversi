@@ -1,4 +1,4 @@
-#  $StoneQuantity,
+#  #StoneQuantity,
 #  #logScore,
 #  #TickThroughputC,
 #  #RemainingDepth,
@@ -8,7 +8,7 @@
 #  #log.inactive/still,
 #  #log.inactive/already
 data modify storage reversi_201:logs output append value {}
-execute store result storage reversi_201:logs output[-1].StoneQuantity int 1 run scoreboard players get $StoneQuantity ReversiData_201
+execute store result storage reversi_201:logs output[-1].StoneQuantity int 1 run scoreboard players get #StoneQuantity ReversiData_201
 execute store result storage reversi_201:logs output[-1].logScore int 1 run scoreboard players get #logScore ReversiData_201
 data modify storage reversi_201:logs output[-1].functionName set from storage reversi_201:logs tmp
 execute store result storage reversi_201:logs output[-1].TickThroughputC int 1 run scoreboard players get #TickThroughputC ReversiData_201

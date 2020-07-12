@@ -1,6 +1,6 @@
 #0にセット
-    scoreboard players set $StoneWhite ReversiData_201 0
-    scoreboard players set $StoneBlack ReversiData_201 0
+    scoreboard players set #StoneWhite ReversiData_201 0
+    scoreboard players set #StoneBlack ReversiData_201 0
 #メッセージ
     title @a[scores={playing_000=201}] times 0 100 20
     title @a[scores={playing_000=201}] title {"text":"GAME END!!","color":"yellow","bold":true}

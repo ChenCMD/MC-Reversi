@@ -1,6 +1,6 @@
 #AILvのコピーと1減算
     scoreboard players operation #RemainingDepth ReversiData_201 = $AI-Lv ReversiData_201
-    execute if score $StoneQuantity ReversiData_201 >= #AI-LastAlgorithm ReversiData_201 run scoreboard players operation #RemainingDepth ReversiData_201 = #LastDepth ReversiData_201
+    execute if score #StoneQuantity ReversiData_201 >= #AI-LastAlgorithm ReversiData_201 run scoreboard players operation #RemainingDepth ReversiData_201 = #LastDepth ReversiData_201
         # #DEBUG log
         # data merge storage reversi_201:logs {tmp:"reversi_201:game/turn/ai/advanced/lv_branch"}
         # function reversi_201:game/debug/log.put
@@ -13,8 +13,8 @@
     execute if score #RemainingDepth ReversiData_201 matches ..0 as @e[tag=Candidate_201] unless score @s SortValue_201 matches 0..0 run kill @s
     execute if score #RemainingDepth ReversiData_201 matches ..0 run schedule function reversi_201:game/turn/select_non_player 20t
 #Lv2+処理
-    execute if score #RemainingDepth ReversiData_201 matches 1.. run scoreboard players operation #MoreDepthTurnColor ReversiData_201 = $TurnColor ReversiData_201
+    execute if score #RemainingDepth ReversiData_201 matches 1.. run scoreboard players operation #MoreDepthTurnColor ReversiData_201 = #TurnColor ReversiData_201
         # #DEBUG ホログラムkill
-        # execute if score #RemainingDepth ReversiData_201 matches 1.. if score $StoneQuantity ReversiData_201 < #AI-LastAlgorithm ReversiData_201 as @e[tag=Candidate_201] unless score @s SortValue_201 matches 0..4 at @s positioned ~ ~7.5 ~ run kill @e[limit=1,tag=Display,distance=..0.25]
-    execute if score #RemainingDepth ReversiData_201 matches 1.. if score $StoneQuantity ReversiData_201 < #AI-LastAlgorithm ReversiData_201 as @e[tag=Candidate_201] unless score @s SortValue_201 matches 0..4 run kill @s
+        # execute if score #RemainingDepth ReversiData_201 matches 1.. if score #StoneQuantity ReversiData_201 < #AI-LastAlgorithm ReversiData_201 as @e[tag=Candidate_201] unless score @s SortValue_201 matches 0..4 at @s positioned ~ ~7.5 ~ run kill @e[limit=1,tag=Display,distance=..0.25]
+    execute if score #RemainingDepth ReversiData_201 matches 1.. if score #StoneQuantity ReversiData_201 < #AI-LastAlgorithm ReversiData_201 as @e[tag=Candidate_201] unless score @s SortValue_201 matches 0..4 run kill @s
     execute if score #RemainingDepth ReversiData_201 matches 1.. run function reversi_201:game/turn/ai/advanced/deep.init

@@ -4,7 +4,7 @@
         tag @s remove isSuccess_201
         execute positioned ~ ~ ~ unless block ~ ~ ~ #reversi_201:stone_block run function reversi_201:game/turn/ai/check.run
     #多分行ける
-        execute if score $StoneQuantity ReversiData_201 >= #AI-LastAlgorithm ReversiData_201 if score #RemainingDepth ReversiData_201 matches 1 run function reversi_201:game/turn/ai/algorithm/3rd.run
+        execute if score #StoneQuantity ReversiData_201 >= #AI-LastAlgorithm ReversiData_201 if score #RemainingDepth ReversiData_201 matches 1 run function reversi_201:game/turn/ai/algorithm/3rd.run
     #isSuccess付いてたら開放度確認
         execute if entity @s[tag=isSuccess_201] run function reversi_201:game/turn/ai/advanced/deep.success
 #次のマス
