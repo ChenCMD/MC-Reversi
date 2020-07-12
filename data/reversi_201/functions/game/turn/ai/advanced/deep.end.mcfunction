@@ -5,7 +5,7 @@ kill @s
 scoreboard players set $LastBoardPredict Evaluation_201 0
 scoreboard players remove #RemainingDepth ReversiData_201 1
 #置けるマスがない時の処理 最悪値を持つダミー召喚してbackの実行
-    execute unless entity @e[tag=Candidate_201,tag=!InactiveCandidate_201] at @s run summon minecraft:area_effect_cloud 2065 ~ 18 {Rotation:[0f,90f],Age:-2147483648,Duration:-1,WaitTime:-2147483648,Tags:[Candidate_201,DummyCandidate_201]}
+    execute unless entity @e[tag=Candidate_201,tag=!InactiveCandidate_201] at @s run summon minecraft:area_effect_cloud -19999 ~ 18 {Rotation:[0f,90f],Age:-2147483648,Duration:-1,WaitTime:-2147483648,Tags:[Candidate_201,DummyCandidate_201]}
     execute if entity @e[tag=DummyCandidate_201] run scoreboard players set @e[tag=DummyCandidate_201] Evaluation_201 48
     execute if entity @e[tag=DummyCandidate_201] run scoreboard players operation #RemainingDepthC ReversiData_201 >< #RemainingDepth ReversiData_201
 #CursorEntityがある = 置けるマスがある ときの処理

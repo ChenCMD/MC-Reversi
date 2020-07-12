@@ -6,10 +6,10 @@
         execute unless score $Think.MAX ReversiData_201 matches 1.. unless score $Think.COUNT ReversiData_201 matches 1.. run scoreboard players set #Think ReversiData_201 0
         execute if score #Think ReversiData_201 matches 1 run function reversi_201:game/turn/player/long_think/init
     #初期石配置
-        setblock 2069 10 20 white_stained_glass
-        setblock 2069 10 21 black_stained_glass
-        setblock 2068 10 20 black_stained_glass
-        setblock 2068 10 21 white_stained_glass
+        setblock -19995 10 20 white_stained_glass
+        setblock -19995 10 21 black_stained_glass
+        setblock -19996 10 20 black_stained_glass
+        setblock -19996 10 21 white_stained_glass
         execute if score $sheep ReversiData_201 matches 1 run function reversi_201:game/stone/sheep/init_put
         execute unless score $sheep ReversiData_201 matches 1 run function reversi_201:game/stone/util/init_put
 

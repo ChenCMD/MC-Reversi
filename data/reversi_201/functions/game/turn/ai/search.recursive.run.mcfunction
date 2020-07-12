@@ -7,7 +7,7 @@
 #次のマス
     tp @s ~1 ~ ~
 #次の列
-    execute at @s if block ~ ~ ~ orange_stained_glass run tp @s 2065.5 ~ ~1
+    execute at @s if block ~ ~ ~ orange_stained_glass run tp @s -19998.5 ~ ~1
 #次の列行ってるのに外周ブロックに乗ってたら終わり n=盤面のサイズ n+1tickで次のプレイヤーへ
     execute at @s if block ~ ~ ~ orange_stained_glass run function reversi_201:game/turn/ai/search.end
 #つぎ

@@ -1,4 +1,4 @@
-playsound entity.villager.no ambient @a[scores={playing_000=201}] ~ ~ ~ 1 1 1
+playsound entity.villager.no ambient @a[scores={playing_000=201}] 2969.0 40.5 21.0 1 1 1
 #黒の石ないよ
     execute if score #StoneBlack ReversiData_201 matches 0 run title @a[scores={playing_000=201}] actionbar [{"text":"黒の石が無くなりました。詰みです。","color":"gold"}]
     execute if score #StoneBlack ReversiData_201 matches 0 run schedule function reversi_201:game/end/direct 3s
