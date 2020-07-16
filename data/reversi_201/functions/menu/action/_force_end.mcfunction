@@ -1,0 +1,1 @@
+function reversi_201:game/force_end
