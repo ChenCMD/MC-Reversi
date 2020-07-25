@@ -8,6 +8,7 @@
     team join NoCollision_201 @e[tag=hologram_sandbag_201]
     scoreboard players reset #StoneWhite ReversiData_201
     scoreboard players reset #StoneBlack ReversiData_201
+    scoreboard players set #TurnColor ReversiData_201 0
     scoreboard players set #SkipFlag ReversiData_201 0
     bossbar set reversi_201:player1_201 players
     bossbar set reversi_201:player2_201 players
