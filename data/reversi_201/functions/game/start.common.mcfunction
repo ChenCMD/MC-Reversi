@@ -27,3 +27,5 @@
     scoreboard players set #StoneQuantity ReversiData_201 4
 #石の最大数定義
     scoreboard players set #StoneQuantityMAX ReversiData_201 64
+#プレイフラグ立てる
+    scoreboard players set $isPlay ReversiData_201 1
