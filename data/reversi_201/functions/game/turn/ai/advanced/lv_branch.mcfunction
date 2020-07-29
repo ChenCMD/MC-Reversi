@@ -8,7 +8,7 @@
 #候補の評価ソート
     function reversi_201:game/turn/common/sort.run
 #置ける場所が最初から一か所しかない場合処理の簡略化
-    execute unless entity @e[limit=1,tag=Candidate_201,scores={SortValue_201=1..}] run scoreboard players set #RemainingDepth ReversiData_201 0
+    execute unless entity @e[tag=Candidate_201,scores={SortValue_201=1..},limit=1] run scoreboard players set #RemainingDepth ReversiData_201 0
 #Lv1 処理
     execute if score #RemainingDepth ReversiData_201 matches ..0 as @e[tag=Candidate_201] unless score @s SortValue_201 matches 0..0 run kill @s
     execute if score #RemainingDepth ReversiData_201 matches ..0 run schedule function reversi_201:game/turn/select_non_player 20t
