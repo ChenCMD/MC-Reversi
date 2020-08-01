@@ -1,2 +1,2 @@
 scoreboard players operation #TickThroughputC ReversiData_201 = $TickThroughput ReversiData_201
-execute as @e[tag=Checker_201] at @s run function reversi_201:game/turn/player/search.recursive.run
+execute as @e[tag=Checker_201,distance=..50,x=-19995.0,y=11.0,z=21.0] at @s run function reversi_201:game/turn/player/search.recursive.run

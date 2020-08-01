@@ -1,1 +1,1 @@
-execute as @e[tag=NoVisible_201] at @s run tp @s ~ ~11.5 ~
+execute as @e[tag=NoVisible_201,distance=..200,x=2069.0,y=40.0,z=21.0] at @s run tp @s ~ ~11.5 ~

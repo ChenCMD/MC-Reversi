@@ -7,12 +7,12 @@
 #4隅の補正入れる
     execute if score #StoneQuantity ReversiData_201 < #AI-LastAlgorithm ReversiData_201 run summon armor_stand ~ ~ ~ {Marker:1b,Invisible:1b,Tags:[TempY,Entity_201]}
     execute if score #StoneQuantity ReversiData_201 < #AI-LastAlgorithm ReversiData_201 positioned ~ 10 ~ if entity @e[tag=PreCorner_201,distance=..0.5] at @e[tag=Corner_201,distance=..1.5] run summon armor_stand ~ ~ ~ {Marker:1b,Invisible:1b,Tags:[Board_201,Entity_201]}
-    execute if score #StoneQuantity ReversiData_201 < #AI-LastAlgorithm ReversiData_201 positioned ~ 10 ~ if entity @e[tag=PreCorner_201,distance=..0.5] store result entity @e[tag=Board_201,limit=1] Pos[1] double 0.1 run data get entity @e[tag=TempY,limit=1] Pos[1] 10
+    execute if score #StoneQuantity ReversiData_201 < #AI-LastAlgorithm ReversiData_201 positioned ~ 10 ~ if entity @e[tag=PreCorner_201,distance=..0.5] store result entity @e[tag=Board_201,distance=..50,x=-19995.0,y=11.0,z=21.0,limit=1] Pos[1] double 0.1 run data get entity @e[tag=TempY,distance=..50,x=-19995.0,y=11.0,z=21.0,limit=1] Pos[1] 10
     execute if score #StoneQuantity ReversiData_201 < #AI-LastAlgorithm ReversiData_201 positioned ~ 10 ~ if entity @e[tag=PreCorner_201,distance=..0.5] at @e[tag=Board_201,limit=1] if block ~ ~ ~ air at @s run scoreboard players add @e[tag=Candidate_201,distance=..0.5] Evaluation_201 16
-    execute if score #StoneQuantity ReversiData_201 < #AI-LastAlgorithm ReversiData_201 run tp @e[tag=TempY,limit=1] ~ ~ ~
-    execute if score #StoneQuantity ReversiData_201 < #AI-LastAlgorithm ReversiData_201 positioned ~ 10 ~ if entity @e[tag=Corner_201,distance=..0.5] at @e[tag=TempY] run scoreboard players remove @e[tag=Candidate_201,distance=..0.5] Evaluation_201 16
-    execute if score #StoneQuantity ReversiData_201 < #AI-LastAlgorithm ReversiData_201 run kill @e[tag=TempY,limit=1]
-    execute if score #StoneQuantity ReversiData_201 < #AI-LastAlgorithm ReversiData_201 run kill @e[tag=Board_201,limit=1]
+    execute if score #StoneQuantity ReversiData_201 < #AI-LastAlgorithm ReversiData_201 run tp @e[tag=TempY,distance=..50,x=-19995.0,y=11.0,z=21.0,limit=1] ~ ~ ~
+    execute if score #StoneQuantity ReversiData_201 < #AI-LastAlgorithm ReversiData_201 positioned ~ 10 ~ if entity @e[tag=Corner_201,distance=..0.5] at @e[tag=TempY,distance=..50,x=-19995.0,y=11.0,z=21.0] run scoreboard players remove @e[tag=Candidate_201,distance=..0.5] Evaluation_201 16
+    execute if score #StoneQuantity ReversiData_201 < #AI-LastAlgorithm ReversiData_201 run kill @e[tag=TempY,distance=..50,x=-19995.0,y=11.0,z=21.0,limit=1]
+    execute if score #StoneQuantity ReversiData_201 < #AI-LastAlgorithm ReversiData_201 run kill @e[tag=Board_201,distance=..50,x=-19995.0,y=11.0,z=21.0,limit=1]
 # #DEBUG ホログラムsummon
 # execute as @e[tag=Candidate_201,distance=..0.5] run function reversi_201:game/debug/hologram.summon
 # #DEBUG log
