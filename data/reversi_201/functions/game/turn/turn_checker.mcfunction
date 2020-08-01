@@ -1,12 +1,8 @@
 #リセット
-    execute as @e[tag=CursorEntity_201] at @s run tp @s ~ ~-200 ~
-    kill @e[tag=CursorEntity_201]
-    kill @e[tag=SelectItem_201]
-    kill @e[tag=Candidate_201]
-#DEBUG 石の数の合計にずれがありそうなので検査
-    scoreboard players operation #TEST ReversiData_201 = #StoneBlack ReversiData_201
-    scoreboard players operation #TEST ReversiData_201 += #StoneWhite ReversiData_201
-    execute unless score #StoneQuantity ReversiData_201 = #TEST ReversiData_201 run tellraw @a[scores={playing_000=201}] [{"text":"[ERROR] ","color":"red","bold":true},{"text":"StoneQuantityとBlack+Whiteが一致しないよ。","color":"red","bold":false}]
+    execute as @e[tag=CursorEntity_201,distance=..200,x=2069.0,y=40.0,z=21.0] at @s run tp @s ~ ~-200 ~
+    kill @e[tag=CursorEntity_201,distance=..200,x=2069.0,y=-160.0,z=21.0]
+    kill @e[tag=SelectItem_201,distance=..200,x=2069.0,y=40.0,z=21.0]
+    kill @e[tag=Candidate_201,distance=..50,x=-19995.0,y=11.0,z=21.0]
 
 #全マス埋まってなかったら続ける
     execute unless score #StoneQuantity ReversiData_201 = #StoneQuantityMAX ReversiData_201 run summon armor_stand -19999 10 17 {Tags:[Checker_201,Entity_201],Marker:1b,Invisible:0b,Rotation:[-90.0f,0f]}

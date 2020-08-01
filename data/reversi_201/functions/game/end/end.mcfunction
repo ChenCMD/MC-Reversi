@@ -13,6 +13,6 @@
     execute if score #StoneBlack ReversiData_201 = #StoneWhite ReversiData_201 run playsound entity.villager.trade ambient @a[scores={playing_000=201}] 2969.0 40.5 21.0 0.5 1 1
     execute unless score #StoneBlack ReversiData_201 = #StoneWhite ReversiData_201 run playsound ui.toast.challenge_complete player @a[scores={playing_000=201}] 2969.0 40.5 21.0 0.5 1 1
 #ゴミ処理
-    kill @e[tag=AggregateEntity_201]
+    kill @e[tag=AggregateEntity_201,distance=..50,x=-19995.0,y=11.0,z=21.0]
 #共通終了処理
     function reversi_201:game/end/end.common

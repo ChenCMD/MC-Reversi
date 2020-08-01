@@ -19,8 +19,8 @@ execute if score $sheep ReversiData_201 matches 1 run data modify storage utilit
 execute if score $isolation ReversiData_201 matches 0 run data modify storage utility_001:hologram_util TextGroup append value {Offset:[3.2f,3.7f],Setting:{CursorCollider:1b,TextInterpret:1b,TextSpaceWidth:0.18f},HologramID:2028,Text:['{"text":"F","color":"red","bold":true}','{"text":"a","color":"red","bold":true}','{"text":"l","color":"red","bold":true}','{"text":"s","color":"red","bold":true}','{"text":"e","color":"red","bold":true}']}
 execute if score $isolation ReversiData_201 matches 1 run data modify storage utility_001:hologram_util TextGroup append value {Offset:[3.2f,3.7f],Setting:{CursorCollider:1b,TextInterpret:1b,TextSpaceWidth:0.18f},HologramID:2028,Text:['{"text":"T","color":"green","bold":true}','{"text":"r","color":"green","bold":true}','{"text":"u","color":"green","bold":true}','{"text":"e","color":"green","bold":true}','{"text":" ","color":"green","bold":true}']}
 
-kill @e[tag=hologram_001,scores={hologram_id_001=2021}]
-kill @e[tag=hologram_001,scores={hologram_id_001=2023..2024}]
-kill @e[tag=hologram_001,scores={hologram_id_001=2026}]
-kill @e[tag=hologram_001,scores={hologram_id_001=2028}]
+kill @e[tag=hologram_001,scores={hologram_id_001=2021},distance=..200,x=2069.0,y=40.0,z=21.0]
+kill @e[tag=hologram_001,scores={hologram_id_001=2023..2024},distance=..200,x=2069.0,y=40.0,z=21.0]
+kill @e[tag=hologram_001,scores={hologram_id_001=2026},distance=..200,x=2069.0,y=40.0,z=21.0]
+kill @e[tag=hologram_001,scores={hologram_id_001=2028},distance=..200,x=2069.0,y=40.0,z=21.0]
 execute positioned 2072.5 44.0 38.8 rotated 90 0 run function utility_001:hologram_util/api/create
