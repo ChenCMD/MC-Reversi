@@ -1,5 +1,5 @@
 {
-    "type": "minecraft:empty",
+    "type": "minecraft:generic",
     "pools": [
         {
             "rolls": 1,
