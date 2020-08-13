@@ -7,7 +7,5 @@
 #4隅の補正入れる
     execute if score #StoneQuantity ReversiData_201 < #AI-LastAlgorithm ReversiData_201 if entity @e[type=area_effect_cloud,tag=PreCorner_201,distance=..0.5] at @e[type=area_effect_cloud,tag=Corner_201,distance=..1.5] if block ~ ~ ~ air at @s run scoreboard players add @e[type=area_effect_cloud,tag=Candidate_201,distance=..0.5] Evaluation_201 16
     execute if score #StoneQuantity ReversiData_201 < #AI-LastAlgorithm ReversiData_201 if entity @e[type=area_effect_cloud,tag=Corner_201,distance=..0.5] run scoreboard players remove @e[type=area_effect_cloud,tag=Candidate_201,distance=..0.5] Evaluation_201 16
-# #DEBUG ホログラムsummon
-# execute as @e[type=area_effect_cloud,tag=Candidate_201,distance=..0.5] run function reversi_201:game/debug/hologram.summon
 #リセット
     scoreboard players set #Tmp Evaluation_201 0
