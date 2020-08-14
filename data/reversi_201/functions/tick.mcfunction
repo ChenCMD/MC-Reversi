@@ -1,6 +1,7 @@
 tag @a[scores={playing_000=201},x=2065.0,y=38.0,z=32.0,dx=8.0,dy=7.0,dz=9.0] add hologram_operator_001
 tag @a[scores={playing_000=201},x=2050.0,y=39.0,z=26.0,dx=5.0,dy=4.0,dz=6.0] add hologram_operator_001
-execute if score $isPlay ReversiData_201 matches 1 unless score $vsAI ReversiData_201 matches 0 unless entity @a[tag=Player_Black_201,scores={playing_000=201},limit=1] run data merge storage reversi_201:data {region:"プレイヤーが退出した為"}
-execute if score $isPlay ReversiData_201 matches 1 unless score $vsAI ReversiData_201 matches 0 unless entity @a[tag=Player_Black_201,scores={playing_000=201},limit=1] run function reversi_201:game/force_end
-execute if score $isPlay ReversiData_201 matches 1 unless score $vsAI ReversiData_201 matches 1 unless entity @a[tag=Player_White_201,scores={playing_000=201},limit=1] run data merge storage reversi_201:data {region:"プレイヤーが退出した為"}
-execute if score $isPlay ReversiData_201 matches 1 unless score $vsAI ReversiData_201 matches 1 unless entity @a[tag=Player_White_201,scores={playing_000=201},limit=1] run function reversi_201:game/force_end
+
+execute if score $isPlay ReversiData_201 matches 1 unless score $vsAI ReversiData_201 matches 0 unless entity @a[tag=Player_Black_201,scores={playing_000=201},distance=..200,x=2069.0,y=40.0,z=21.0,limit=1] run data merge storage reversi_201:data {region:"プレイヤーが退出した為"}
+execute if score $isPlay ReversiData_201 matches 1 unless score $vsAI ReversiData_201 matches 0 unless entity @a[tag=Player_Black_201,scores={playing_000=201},distance=..200,x=2069.0,y=40.0,z=21.0,limit=1] run function reversi_201:game/force_end
+execute if score $isPlay ReversiData_201 matches 1 unless score $vsAI ReversiData_201 matches 1 unless entity @a[tag=Player_White_201,scores={playing_000=201},distance=..200,x=2069.0,y=40.0,z=21.0,limit=1] run data merge storage reversi_201:data {region:"プレイヤーが退出した為"}
+execute if score $isPlay ReversiData_201 matches 1 unless score $vsAI ReversiData_201 matches 1 unless entity @a[tag=Player_White_201,scores={playing_000=201},distance=..200,x=2069.0,y=40.0,z=21.0,limit=1] run function reversi_201:game/force_end
