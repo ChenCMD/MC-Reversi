@@ -1,0 +1,3 @@
+execute if score $isPlay ReversiData_201 matches 1 unless entity @s[tag=!Player_Black_201,tag=!Player_White_201] run tellraw @a [{"text":"[エラー] ","color":"red"},{"text":"ゲーム中の為ロビーへ戻ることは出来ません。","color":"white"}]
+execute if score $isPlay ReversiData_201 matches 1 if entity @s[tag=!Player_Black_201,tag=!Player_White_201] run function reversi_201:menu/area_linker/leave
+execute if score $isPlay ReversiData_201 matches 0 run function reversi_201:menu/area_linker/leave

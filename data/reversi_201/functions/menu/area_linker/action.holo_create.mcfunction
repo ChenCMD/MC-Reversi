@@ -1,0 +1,2 @@
+data modify storage utility_001:hologram_util TextGroup set value [{Offset:[0f,0f],Setting:{CursorCollider:1b,TextInterpret:0b,TextSpaceWidth:0.25f},HologramID:2099,Text:['ロ','ビ','ー','へ']}]
+execute positioned 2053.375 41.2 32.75 rotated 90 0 run function utility_001:hologram_util/api/create

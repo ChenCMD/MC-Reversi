@@ -13,4 +13,5 @@ execute if score @s hologram_id_001 matches 2026 run function reversi_201:menu/a
 execute if score @s hologram_id_001 matches 2028 run function reversi_201:menu/action/setting.isolation
 execute if score @s hologram_id_001 matches 2030..2040 run function reversi_201:menu/action/_info
 
-execute if score @s hologram_id_001 matches 2099 run function reversi_201:menu/action/_force_end
+execute if score @s hologram_id_001 matches 2098 run function reversi_201:menu/action/_force_end
+execute if score @s hologram_id_001 matches 2099 run function reversi_201:menu/action/_area.leave

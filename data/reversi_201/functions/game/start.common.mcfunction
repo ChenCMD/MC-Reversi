@@ -1,11 +1,11 @@
 #リセット処理
     function reversi_201:game/reset
 #ホログラムclear
-    kill @e[tag=hologram_001,scores={hologram_id_001=2000..2100},distance=..200,x=2069.0,y=40.0,z=21.0]
+    kill @e[tag=hologram_001,scores={hologram_id_001=2000..2098},distance=..200,x=2069.0,y=40.0,z=21.0]
     kill @e[type=armor_stand,tag=hologram.overlay.0_201,distance=..200,x=2069.0,y=40.0,z=21.0]
     kill @e[type=armor_stand,tag=hologram.overlay.1_201,distance=..200,x=2069.0,y=40.0,z=21.0]
 #ホログラム設定
-    data modify storage utility_001:hologram_util TextGroup set value [{Offset:[3.2f,3.0f],Setting:{CursorCollider:1b,TextInterpret:1b,TextSpaceWidth:0.22f},HologramID:2099,Text:['{"text":"強","color":"red","bold":true}','{"text":"制","color":"red","bold":true}','{"text":"終","color":"red","bold":true}','{"text":"了","color":"red","bold":true}']}]
+    data modify storage utility_001:hologram_util TextGroup set value [{Offset:[3.2f,3.0f],Setting:{CursorCollider:1b,TextInterpret:1b,TextSpaceWidth:0.22f},HologramID:2098,Text:['{"text":"強","color":"red","bold":true}','{"text":"制","color":"red","bold":true}','{"text":"終","color":"red","bold":true}','{"text":"了","color":"red","bold":true}']}]
     execute positioned 2072.5 44.0 38.8 rotated 90 0 run function utility_001:hologram_util/api/create
 #隔離
     execute if score $isolation ReversiData_201 matches 1 run fill 2056 43 23 2056 40 18 minecraft:dark_oak_fence[north=true,south=true]

@@ -1,4 +1,4 @@
-kill @e[tag=hologram_001,scores={hologram_id_001=2000..2100},distance=..200,x=2069.0,y=40.0,z=21.0]
+kill @e[tag=hologram_001,scores={hologram_id_001=2000..2098},distance=..200,x=2069.0,y=40.0,z=21.0]
 kill @e[type=armor_stand,tag=hologram.overlay.0_201,distance=..200,x=2069.0,y=40.0,z=21.0]
 kill @e[type=armor_stand,tag=hologram.overlay.1_201,distance=..200,x=2069.0,y=40.0,z=21.0]
 execute if score $vsAI ReversiData_201 matches 0 run tag @a[scores={playing_000=201}] remove Player_Black_201
