@@ -20,6 +20,6 @@
     scoreboard players reset #Think.Flag.White ReversiData_201
     schedule clear reversi_201:game/turn/player/long_think/decrement
 
-    execute unless score $TickThroughput ReversiData_201 = $TickThroughput ReversiData_201 run scoreboard players set $TickThroughput ReversiData_201 24
+    execute unless score $TickThroughput ReversiData_201 = $TickThroughput ReversiData_201 run scoreboard players set $TickThroughput ReversiData_201 256
     # #DEBUG log
     # data modify storage reversi_201:logs output set value []
