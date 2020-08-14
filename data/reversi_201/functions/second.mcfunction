@@ -1,0 +1,1 @@
+execute if score $isPlay ReversiData_201 matches 1 if score #PlayTime ReversiData_201 matches ..599 run scoreboard players add #PlayTime ReversiData_201 1

@@ -14,5 +14,9 @@
     execute unless score #StoneBlack ReversiData_201 = #StoneWhite ReversiData_201 run playsound ui.toast.challenge_complete player @a[scores={playing_000=201}] 2969.0 40.5 21.0 0.5 1 1
 #ゴミ処理
     kill @e[type=armor_stand,tag=AggregateEntity_201,distance=..50,x=-19995.0,y=11.0,z=21.0]
+#コイン加算
+    execute if score #StoneBlack ReversiData_201 < #StoneWhite ReversiData_201 run data merge storage reversi_201:data {win:"white",TLE:false}
+    execute if score #StoneBlack ReversiData_201 > #StoneWhite ReversiData_201 run data merge storage reversi_201:data {win:"black",TLE:false}
+    function reversi_201:game/end/add_coin
 #共通終了処理
     function reversi_201:game/end/end.common

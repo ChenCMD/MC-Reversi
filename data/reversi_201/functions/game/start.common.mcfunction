@@ -10,7 +10,7 @@
 #隔離
     execute if score $isolation ReversiData_201 matches 1 run fill 2056 43 23 2056 40 18 minecraft:dark_oak_fence[north=true,south=true]
     execute if score $isolation ReversiData_201 matches 1 run fill 2081 40 23 2081 43 18 minecraft:dark_oak_fence[north=true,south=true]
-    execute if score $isolation ReversiData_201 matches 1 run tp @a[tag=Player_White_201,tag=Player_Black_201,scores={playing_000=201},x=2056.5,y=38.0,z=8.5,dx=25,dy=4,dz=35] 2055.5 40.0 21.0 90 0
+    execute if score $isolation ReversiData_201 matches 1 run tp @a[tag=!Player_White_201,tag=!Player_Black_201,scores={playing_000=201},x=2056.5,y=38.0,z=8.5,dx=25,dy=4,dz=35] 2055.5 40.0 21.0 90 0
 #長考処理の初期化
     scoreboard players set #Think ReversiData_201 1
     execute unless score $Think.MAX ReversiData_201 matches 1.. unless score $Think.COUNT ReversiData_201 matches 1.. run scoreboard players set #Think ReversiData_201 0

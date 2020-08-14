@@ -10,6 +10,7 @@
     scoreboard players reset #StoneBlack ReversiData_201
     scoreboard players set #TurnColor ReversiData_201 0
     scoreboard players set #SkipFlag ReversiData_201 0
+    scoreboard players set #PlayTime ReversiData_201 0
     bossbar set reversi_201:player1_201 players
     bossbar set reversi_201:player2_201 players
     scoreboard players reset #Think.White ReversiData_201
