@@ -40,12 +40,13 @@ bossbar set reversi_201:player2_201 visible true
 
 
 #> VSCode Extension : Data-pack Helper Plus declare
-# @within function reversi_201:init
+# @within function reversi_201:*
 # @within function reversi_201:menu/**
     #declare storage reversi_201:menu
-    #declare score_holder $Current SessionID.0_201
-    scoreboard objectives add SessionID.0_201 dummy {"text":"(201)退出などによる検知ずれ防止"}
-    scoreboard objectives add SessionID.1_201 dummy {"text":"(201)退出などによる検知ずれ防止"}
+    #declare score_holder $Current SessionID_201
+    scoreboard objectives add SessionID.B_201 dummy {"text":"(201)セッションのID"}
+    scoreboard objectives add SessionID.W_201 dummy {"text":"(201)セッションのID"}
+    scoreboard objectives add Leave_201 custom:leave_game {"text":"(201)L->J検知"}
 
 data merge storage reversi_201:menu {Default:{Skin:   [{Offset:[2.4f,1.5f],Setting:{CursorCollider:0b,TextInterpret:1b,TextSpaceWidth:0.22f},HologramID:2000,Text:['{"text":"ス","color":"green"}','{"text":"キ","color":"green"}','{"text":"ン","color":"green"}']},{Offset:[3.2f,1.5f],Setting:{CursorCollider:1b,TextInterpret:1b,TextSpaceWidth:0.22f},HologramID:2001,Text:['{"text":"メ","color":"white"}','{"text":"ニ","color":"white"}','{"text":"ュ","color":"white"}','{"text":"ー","color":"white"}']},{Offset:[4.2f,1.5f],Setting:{CursorCollider:1b,TextInterpret:1b,TextSpaceWidth:0.22f},HologramID:2002,Text:['{"text":"設","color":"white"}','{"text":"定","color":"white"}']},{Offset:[3.31f,3.0f],Setting:{CursorCollider:0b,TextInterpret:1b,TextSpaceWidth:0.22f},HologramID:2000,Text:['{"text":"開","bold":true}','{"text":"発","bold":true}','{"text":"中","bold":true}']}]}}
 data merge storage reversi_201:menu {Default:{Menu:   [{Offset:[2.4f,1.5f],Setting:{CursorCollider:1b,TextInterpret:1b,TextSpaceWidth:0.22f},HologramID:2000,Text:['{"text":"ス","color":"white"}','{"text":"キ","color":"white"}','{"text":"ン","color":"white"}']},{Offset:[3.2f,1.5f],Setting:{CursorCollider:0b,TextInterpret:1b,TextSpaceWidth:0.22f},HologramID:2001,Text:['{"text":"メ","color":"green"}','{"text":"ニ","color":"green"}','{"text":"ュ","color":"green"}','{"text":"ー","color":"green"}']},{Offset:[4.2f,1.5f],Setting:{CursorCollider:1b,TextInterpret:1b,TextSpaceWidth:0.22f},HologramID:2002,Text:['{"text":"設","color":"white"}','{"text":"定","color":"white"}']},{Offset:[1.7f,2.5f],Setting:{CursorCollider:1b,TextInterpret:1b,TextSpaceWidth:0.20f},HologramID:2011,Text:['{"text":"プ","color":"dark_gray"}','{"text":"レ","color":"dark_gray"}','{"text":"イ","color":"dark_gray"}','{"text":"ヤ","color":"dark_gray"}','{"text":"ー","color":"dark_gray"}','{"text":"1","color":"dark_gray"}']},{Offset:[4.4f,2.5f],Setting:{CursorCollider:1b,TextInterpret:1b,TextSpaceWidth:0.20f},HologramID:2012,Text:['{"text":"プ","color":"white"}','{"text":"レ","color":"white"}','{"text":"イ","color":"white"}','{"text":"ヤ","color":"white"}','{"text":"ー","color":"white"}','{"text":"2","color":"white"}']},{Offset:[3.2f,3.8f],Setting:{CursorCollider:1b,TextInterpret:0b,TextSpaceWidth:0.22f},HologramID:2010,Text:["ス","タ","ー","ト"]}]}}
