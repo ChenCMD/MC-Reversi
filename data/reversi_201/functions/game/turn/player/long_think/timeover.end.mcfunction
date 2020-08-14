@@ -11,5 +11,7 @@
 #コイン加算
     execute if score #TurnColor ReversiData_201 matches 0 run data merge storage reversi_201:data {win:"white",TLE:true}
     execute if score #TurnColor ReversiData_201 matches 1 run data merge storage reversi_201:data {win:"black",TLE:true}
-    function reversi_201:game/end/add_coin
-function reversi_201:game/end/end.common
+    schedule function reversi_201:game/end/add_coin 100t
+#共通終了処理
+    data merge storage reversi_201:data {time:"long"}
+    function reversi_201:game/end/end.common

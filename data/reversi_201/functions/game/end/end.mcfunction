@@ -17,6 +17,7 @@
 #コイン加算
     execute if score #StoneBlack ReversiData_201 < #StoneWhite ReversiData_201 run data merge storage reversi_201:data {win:"white",TLE:false}
     execute if score #StoneBlack ReversiData_201 > #StoneWhite ReversiData_201 run data merge storage reversi_201:data {win:"black",TLE:false}
-    function reversi_201:game/end/add_coin
+    schedule function reversi_201:game/end/add_coin 100t
 #共通終了処理
+    data merge storage reversi_201:data {time:"long"}
     function reversi_201:game/end/end.common
