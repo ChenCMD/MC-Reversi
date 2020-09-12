@@ -1,3 +1,4 @@
+# summon falling_block ~ ~ ~ {BlockState:{Name:"minecraft:yellow_stained_glass"},NoGravity:1b,Time:579}
 #カーソル位置に石
     execute if score #MoreDepthTurnColor ReversiData_201 matches 0 run setblock ~ ~ ~ black_stained_glass
     execute if score #MoreDepthTurnColor ReversiData_201 matches 1 run setblock ~ ~ ~ white_stained_glass

@@ -4,7 +4,7 @@
 #clone
     clone -19999 ~ 17 -19992 ~ 24 -19999 ~-1 17
 #新しいCheckerを召喚
-    summon armor_stand -19999 ~-1 17 {Tags:[Checker_201,Entity_201],Marker:1b,Invisible:0b,Rotation:[-90.0f,0f]}
+    tp 0-0-c9-0-0 -19999 ~-1 17 -90.0 0
 #先読みの盤面のターンが白か黒かの設定
     scoreboard players add #MoreDepthTurnColor ReversiData_201 1
     scoreboard players operation #MoreDepthTurnColor ReversiData_201 %= #2 num_000
