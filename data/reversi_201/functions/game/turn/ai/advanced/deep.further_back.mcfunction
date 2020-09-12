@@ -1,3 +1,4 @@
+scoreboard players remove #TickThroughputC ReversiData_201 6
     # #DEBUG log
     # data merge storage reversi_201:logs {tmp:"reversi_201:game/turn/ai/advanced/deep.further_back"}
     # function reversi_201:game/debug/log.put

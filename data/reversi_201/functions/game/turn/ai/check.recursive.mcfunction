@@ -1,3 +1,4 @@
+scoreboard players remove #TickThroughputC ReversiData_201 15
 #白だったら次のマス見る
     execute if score #TurnColor ReversiData_201 matches 0 if block ~ ~ ~ white_stained_glass positioned ^ ^ ^1 align xz positioned ~0.5 ~ ~0.5 run function reversi_201:game/turn/ai/check.recursive
     execute if score #TurnColor ReversiData_201 matches 1 if block ~ ~ ~ black_stained_glass positioned ^ ^ ^1 align xz positioned ~0.5 ~ ~0.5 run function reversi_201:game/turn/ai/check.recursive

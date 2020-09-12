@@ -1,3 +1,4 @@
+scoreboard players remove #TickThroughputC ReversiData_201 12
     # #DEBUG log
     # data merge storage reversi_201:logs {tmp:"reversi_201:game/turn/ai/advanced/deep.end"}
     # function reversi_201:game/debug/log.put
@@ -21,4 +22,4 @@ scoreboard players remove #RemainingDepth ReversiData_201 1
             execute unless score #else ReversiData_201 matches 1 if entity @e[type=area_effect_cloud,tag=Candidate_201,tag=!InactiveCandidate_201,distance=..50,x=-19995.0,y=11.0,z=21.0] if score #RemainingDepth ReversiData_201 matches 1.. run function reversi_201:game/turn/ai/advanced/deep.init
 
 #後処理
-    scoreboard players set #TickThroughputC ReversiData_201 -1
+    scoreboard players set #else ReversiData_201 1

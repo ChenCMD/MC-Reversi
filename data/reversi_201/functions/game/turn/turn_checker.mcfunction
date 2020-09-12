@@ -7,6 +7,6 @@
 #全マス埋まってなかったら続ける
     execute unless score #StoneQuantity ReversiData_201 = #StoneQuantityMAX ReversiData_201 run tp 0-0-c9-0-0 -19999 10 17 -90 0
     execute unless score #StoneQuantity ReversiData_201 = #StoneQuantityMAX ReversiData_201 unless score $vsAI ReversiData_201 = #TurnColor ReversiData_201 run function reversi_201:game/turn/player/search.recursive.manager
-    execute unless score #StoneQuantity ReversiData_201 = #StoneQuantityMAX ReversiData_201 if score $vsAI ReversiData_201 = #TurnColor ReversiData_201 run function reversi_201:game/turn/ai/search.recursive.manager
+    execute unless score #StoneQuantity ReversiData_201 = #StoneQuantityMAX ReversiData_201 if score $vsAI ReversiData_201 = #TurnColor ReversiData_201 run function reversi_201:game/turn/ai.mirror/search.recursive
 #埋まってたら終了処理へ
     execute if score #StoneQuantity ReversiData_201 = #StoneQuantityMAX ReversiData_201 run schedule function reversi_201:game/end/direct 3s
