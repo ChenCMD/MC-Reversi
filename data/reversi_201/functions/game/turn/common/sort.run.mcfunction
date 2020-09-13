@@ -1,4 +1,3 @@
-scoreboard players remove #TickThroughputC ReversiData_201 4
 #init all = 0
     scoreboard players set @e[type=area_effect_cloud,tag=Candidate_201,tag=!InactiveCandidate_201,distance=..50,x=-19995.0,y=11.0,z=21.0] SortValue_201 0
 #加算

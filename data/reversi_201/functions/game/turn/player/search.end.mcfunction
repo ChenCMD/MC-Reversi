@@ -16,4 +16,4 @@
 #置けるマスがない時の処理
     execute unless entity @e[type=slime,tag=CursorEntity_201,distance=..200,x=2069.0,y=40.0,z=21.0] run function reversi_201:game/turn/common/cant_place
 #後処理
-    scoreboard players set #else ReversiData_201 1
+    scoreboard players set #TickThroughputC ReversiData_201 -1

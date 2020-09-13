@@ -1,4 +1,3 @@
-scoreboard players remove #TickThroughputC ReversiData_201 9
     # #DEBUG log
     # data merge storage reversi_201:logs {tmp:"reversi_201:game/turn/ai/advanced/deep.init"}
     # function reversi_201:game/debug/log.put
@@ -16,5 +15,5 @@ scoreboard players remove #TickThroughputC ReversiData_201 9
         tag @e[type=area_effect_cloud,tag=Candidate_201,tag=!InactiveCandidate_201,distance=..50,x=-19995.0,y=11.0,z=21.0] add InactiveCandidate_201
     #clone済みの盤面に石を置く
         execute as @e[type=area_effect_cloud,tag=TestPoint_201,tag=!InactiveTestPoint_201,distance=..50,x=-19995.0,y=11.0,z=21.0,limit=1] at @s positioned ~ ~-1 ~ run function reversi_201:game/stone/util/put.set
-    #先読み用の再帰
-        execute as 0-0-c9-0-0 at @s run function reversi_201:game/turn/ai/advanced/deep.recursive
+    #先読み用の再帰マネージャーを呼び出す
+        function reversi_201:game/turn/ai/advanced/deep.recursive.manager
