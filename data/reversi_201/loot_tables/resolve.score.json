@@ -16,7 +16,8 @@
                                         "objective": "ReversiData_201",
                                         "name": "#resolve"
                                     },
-                                    "italic": false
+                                    "italic": false,
+                                    "color": "dark_green"
                                 }
                             ],
                             "entity": "this"

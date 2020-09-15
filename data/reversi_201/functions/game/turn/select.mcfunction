@@ -1,3 +1,4 @@
+# kill @e[tag=holo]
 #Advancements消す
     advancement revoke @a[scores={playing_000=201}] only reversi_201:turn/select_check
 #弱体化消す

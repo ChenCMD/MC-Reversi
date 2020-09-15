@@ -7,6 +7,13 @@
         scoreboard players add #RemainingDepth ReversiData_201 1
     #最良評価値を持つ一か所に絞る
         function reversi_201:game/turn/common/sort.run
+        # execute if score #StoneQuantity ReversiData_201 < #AI-LastAlgorithm ReversiData_201 if score #RemainingDepth ReversiData_201 = $AI-Lv ReversiData_201 as @e[type=area_effect_cloud,tag=Candidate_201,tag=!InactiveCandidate_201,distance=..50,x=-19995.0,y=11.0,z=21.0] at @s run function reversi_201:game/debug/hologram
+        # execute if score #StoneQuantity ReversiData_201 >= #AI-LastAlgorithm ReversiData_201 if score #RemainingDepth ReversiData_201 = #LastDepth ReversiData_201 as @e[type=area_effect_cloud,tag=Candidate_201,tag=!InactiveCandidate_201,distance=..50,x=-19995.0,y=11.0,z=21.0] at @s run function reversi_201:game/debug/hologram
+        # #DEBUG
+        #     execute if score #StoneQuantity ReversiData_201 < #AI-LastAlgorithm ReversiData_201 if score #RemainingDepth ReversiData_201 = $AI-Lv ReversiData_201 run tellraw @a [{"text": "------------------------"}]
+        #     execute if score #StoneQuantity ReversiData_201 >= #AI-LastAlgorithm ReversiData_201 if score #RemainingDepth ReversiData_201 = #LastDepth ReversiData_201 run tellraw @a [{"text": "------------------------"}]
+        #     execute if score #StoneQuantity ReversiData_201 < #AI-LastAlgorithm ReversiData_201 if score #RemainingDepth ReversiData_201 = $AI-Lv ReversiData_201 as @e[tag=Candidate_201,tag=!InactiveCandidate_201] run tellraw @a [{"text":" Eval: ","color":"green"},{"score":{"objective":"Evaluation_201","name":"@s"},"color":"green"},{"text":" | Sort: ","color":"green"},{"score":{"objective":"SortValue_201","name":"@s"},"color":"green"}]
+        #     execute if score #StoneQuantity ReversiData_201 >= #AI-LastAlgorithm ReversiData_201 if score #RemainingDepth ReversiData_201 = #LastDepth ReversiData_201 as @e[tag=Candidate_201,tag=!InactiveCandidate_201] run tellraw @a [{"text":" Eval: ","color":"green"},{"score":{"objective":"Evaluation_201","name":"@s"},"color":"green"},{"text":" | Sort: ","color":"green"},{"score":{"objective":"SortValue_201","name":"@s"},"color":"green"}]
         execute as @e[type=area_effect_cloud,tag=Candidate_201,tag=!InactiveCandidate_201,distance=..50,x=-19995.0,y=11.0,z=21.0] unless score @s SortValue_201 matches 0 run kill @s
     #最良評価値を上に渡す
         #if ((StoneQuantity >= AI-LastAlgorithm && RemainingDepth != LastDepth) || (StoneQuantity < AI-LastAlgorithm && RemainingDepth != AI-Lv))
