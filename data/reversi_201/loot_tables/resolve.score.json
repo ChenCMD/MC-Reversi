@@ -17,7 +17,8 @@
                                         "name": "#resolve"
                                     },
                                     "italic": false,
-                                    "color": "dark_green"
+                                    "color": "dark_green",
+                                    "bold": true
                                 }
                             ],
                             "entity": "this"
