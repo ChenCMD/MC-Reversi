@@ -32,8 +32,8 @@ forceload add -20000 16
     bossbar add reversi_201:player2_201 {"text":"白 持ち時間","color":"white"}
 
 #alias entity checker 0-0-c9-0-0
-# execute unless entity 0-0-c9-0-0 run summon minecraft:area_effect_cloud 2000 0 0 {Age:-2147483648,Duration:-1,WaitTime:-2147483648,UUIDMost:201L,UUIDLeast:0L}
-execute unless entity 0-0-c9-0-0 run summon armor_stand -19998.5 10 17.5 {Marker:1b,UUID:[I; 0, 201, 0, 0]}
+# execute unless entity 00000000-0000-00c9-0000-000000000000 run summon minecraft:area_effect_cloud 2000 0 0 {Age:-2147483648,Duration:-1,WaitTime:-2147483648,UUIDMost:201L,UUIDLeast:0L}
+execute unless entity 00000000-0000-00c9-0000-000000000000 run summon armor_stand -19998.5 10 17.5 {Marker:1b,UUID:[I; 0, 201, 0, 0]}
 bossbar set reversi_201:player1_201 color purple
 bossbar set reversi_201:player1_201 style progress
 bossbar set reversi_201:player1_201 visible true
