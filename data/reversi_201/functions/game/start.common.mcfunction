@@ -7,6 +7,9 @@
 #ホログラム設定
     data modify storage utility_001:hologram_util TextGroup set value [{Offset:[3.2f,3.0f],Setting:{CursorCollider:1b,TextInterpret:1b,TextSpaceWidth:0.22f},HologramID:2098,Text:['{"text":"強","color":"red","bold":true}','{"text":"制","color":"red","bold":true}','{"text":"終","color":"red","bold":true}','{"text":"了","color":"red","bold":true}']}]
     execute positioned 2072.5 44.0 38.8 rotated 90 0 run function utility_001:hologram_util/api/create
+#0-0-c9-0-0召喚
+    # execute unless entity 0-0-c9-0-0 run summon minecraft:area_effect_cloud 2000 0 0 {Age:-2147483648,Duration:-1,WaitTime:-2147483648,UUIDMost:201L,UUIDLeast:0L}
+    execute unless entity 0-0-c9-0-0 run summon armor_stand -19998.5 10 17.5 {Marker:1b,UUID:[I; 0, 201, 0, 0]}
 #隔離
     execute if score $isolation ReversiData_201 matches 1 run fill 2056 43 23 2056 40 18 minecraft:dark_oak_fence[north=true,south=true]
     execute if score $isolation ReversiData_201 matches 1 run fill 2081 40 23 2081 43 18 minecraft:dark_oak_fence[north=true,south=true]
