@@ -1,6 +1,5 @@
 #> reversi_201:init
-# @within tag/function
-#   minecraft:load
+# @within function reversi_201:init_check
 
 forceload add -20000 16
 
@@ -32,8 +31,6 @@ forceload add -20000 16
     bossbar add reversi_201:player2_201 {"text":"白 持ち時間","color":"white"}
 
 #alias entity checker 0-0-c9-0-0
-# execute unless entity 00000000-0000-00c9-0000-000000000000 run summon minecraft:area_effect_cloud 2000 0 0 {Age:-2147483648,Duration:-1,WaitTime:-2147483648,UUIDMost:201L,UUIDLeast:0L}
-execute unless entity 00000000-0000-00c9-0000-000000000000 run summon armor_stand -19998.5 10 17.5 {Marker:1b,UUID:[I; 0, 201, 0, 0]}
 bossbar set reversi_201:player1_201 color purple
 bossbar set reversi_201:player1_201 style progress
 bossbar set reversi_201:player1_201 visible true
@@ -49,7 +46,6 @@ bossbar set reversi_201:player2_201 visible true
     #declare score_holder $Current SessionID_201
     scoreboard objectives add SessionID.B_201 dummy {"text":"(201)セッションのID"}
     scoreboard objectives add SessionID.W_201 dummy {"text":"(201)セッションのID"}
-    scoreboard objectives add Leave_201 custom:leave_game {"text":"(201)L->J検知"}
 
 data merge storage reversi_201:menu {Default:{Skin:   [{Offset:[2.4f,1.5f],Setting:{CursorCollider:0b,TextInterpret:1b,TextSpaceWidth:0.22f},HologramID:2000,Text:['{"text":"ス","color":"green","font": "uniform"}','{"text":"キ","color":"green","font": "uniform"}','{"text":"ン","color":"green","font": "uniform"}']},{Offset:[3.2f,1.5f],Setting:{CursorCollider:1b,TextInterpret:1b,TextSpaceWidth:0.22f},HologramID:2001,Text:['{"text":"メ","color":"white","font": "uniform"}','{"text":"ニ","color":"white","font": "uniform"}','{"text":"ュ","color":"white","font": "uniform"}','{"text":"ー","color":"white","font": "uniform"}']},{Offset:[4.2f,1.5f],Setting:{CursorCollider:1b,TextInterpret:1b,TextSpaceWidth:0.22f},HologramID:2002,Text:['{"text":"設","color":"white","font": "uniform"}','{"text":"定","color":"white","font": "uniform"}']},{Offset:[3.31f,3.0f],Setting:{CursorCollider:0b,TextInterpret:1b,TextSpaceWidth:0.22f},HologramID:2000,Text:['{"text":"開","bold":true,"font": "uniform"}','{"text":"発","bold":true,"font": "uniform"}','{"text":"中","bold":true,"font": "uniform"}']}]}}
 data merge storage reversi_201:menu {Default:{Menu:   [{Offset:[2.4f,1.5f],Setting:{CursorCollider:1b,TextInterpret:1b,TextSpaceWidth:0.22f},HologramID:2000,Text:['{"text":"ス","color":"white","font": "uniform"}','{"text":"キ","color":"white","font": "uniform"}','{"text":"ン","color":"white","font": "uniform"}']},{Offset:[3.2f,1.5f],Setting:{CursorCollider:0b,TextInterpret:1b,TextSpaceWidth:0.22f},HologramID:2001,Text:['{"text":"メ","color":"green","font": "uniform"}','{"text":"ニ","color":"green","font": "uniform"}','{"text":"ュ","color":"green","font": "uniform"}','{"text":"ー","color":"green","font": "uniform"}']},{Offset:[4.2f,1.5f],Setting:{CursorCollider:1b,TextInterpret:1b,TextSpaceWidth:0.22f},HologramID:2002,Text:['{"text":"設","color":"white","font": "uniform"}','{"text":"定","color":"white","font": "uniform"}']},{Offset:[1.7f,2.5f],Setting:{CursorCollider:1b,TextInterpret:1b,TextSpaceWidth:0.20f},HologramID:2011,Text:['{"text":"プ","color":"dark_gray","font": "uniform"}','{"text":"レ","color":"dark_gray","font": "uniform"}','{"text":"イ","color":"dark_gray","font": "uniform"}','{"text":"ヤ","color":"dark_gray","font": "uniform"}','{"text":"ー","color":"dark_gray","font": "uniform"}','{"text":"1","color":"dark_gray","font": "uniform"}']},{Offset:[4.4f,2.5f],Setting:{CursorCollider:1b,TextInterpret:1b,TextSpaceWidth:0.20f},HologramID:2012,Text:['{"text":"プ","color":"white","font": "uniform"}','{"text":"レ","color":"white","font": "uniform"}','{"text":"イ","color":"white","font": "uniform"}','{"text":"ヤ","color":"white","font": "uniform"}','{"text":"ー","color":"white","font": "uniform"}','{"text":"2","color":"white","font": "uniform"}']},{Offset:[3.2f,3.8f],Setting:{CursorCollider:1b,TextInterpret:0b,TextSpaceWidth:0.22f},HologramID:2010,Text:["ス","タ","ー","ト"]}]}}
@@ -64,7 +60,6 @@ data merge storage reversi_201:menu {Default:{Setting:[{Offset:[2.4f,1.5f],Setti
     #declare tag Player_Black_201
     #declare storage reversi_201:logs
     #declare storage reversi_201:data
-    scoreboard objectives add ReversiData_201 dummy {"text":"リバーシのあれこれ保存用"}
     scoreboard objectives add StoneSkin_201 dummy {"text":"石の見た目の選択"}
     team add NoCollision_201
 
