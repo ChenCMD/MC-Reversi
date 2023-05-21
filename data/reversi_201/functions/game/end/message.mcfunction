@@ -6,5 +6,5 @@
 #   reversi_201:game/end/direct
 #   reversi_201:game/force_end
 
-#遅延実行する都合上どうしてもfunctionを分ける必要があった...
+# 遅延実行する都合上どうしてもfunctionを分ける必要があった...
     tellraw @a[scores={playing_000=201}] [{"text":"集計を開始します","color":"green"}]

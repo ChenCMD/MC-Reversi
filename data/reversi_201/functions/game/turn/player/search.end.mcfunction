@@ -4,7 +4,7 @@
 #
 # @within function reversi_201:game/turn/player/search.recursive.run
 
-#置けるマスがある時の処理
+# 置けるマスがある時の処理
     #フラグ消し
         execute if entity @e[type=slime,tag=CursorEntity_201,distance=..200,x=2069.0,y=40.0,z=21.0] run scoreboard players set #SkipFlag ReversiData_201 0
     #メッセージとサウンド
@@ -19,7 +19,7 @@
         execute if entity @e[type=slime,tag=CursorEntity_201,distance=..200,x=2069.0,y=40.0,z=21.0] if score #Think ReversiData_201 matches 1 run function reversi_201:game/turn/player/long_think/decrement
     #カーソル見えるように
         execute if entity @e[type=slime,tag=CursorEntity_201,distance=..200,x=2069.0,y=40.0,z=21.0] run schedule function reversi_201:game/turn/player/cursor.move 1t
-#置けるマスがない時の処理
+# 置けるマスがない時の処理
     execute unless entity @e[type=slime,tag=CursorEntity_201,distance=..200,x=2069.0,y=40.0,z=21.0] run function reversi_201:game/turn/common/cant_place
-#後処理
+# 後処理
     scoreboard players set #TickThroughputC ReversiData_201 -1

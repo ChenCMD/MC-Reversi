@@ -10,7 +10,7 @@
     # #DEBUG log
     # data merge storage reversi_201:logs {tmp:"reversi_201:game/turn/ai/advanced/deep.back"}
     # function reversi_201:game/debug/log.put
-#最良値は相手ターンの場合加算 自身ターンの場合減算
+# 最良値は相手ターンの場合加算 自身ターンの場合減算
         execute if entity @e[type=area_effect_cloud,tag=Candidate_201,tag=DummyCandidate_201,tag=!InactiveCandidate_201,distance=..50,x=-19995.0,y=11.0,z=21.0] run scoreboard players operation #RemainingDepth ReversiData_201 >< #RemainingDepthC ReversiData_201
     #探索深度の加算
         scoreboard players add #RemainingDepth ReversiData_201 1
@@ -45,5 +45,5 @@
         execute if score #StoneQuantity ReversiData_201 < #AI-LastAlgorithm ReversiData_201 unless score #RemainingDepth ReversiData_201 = $AI-Lv ReversiData_201 at @e[type=area_effect_cloud,tag=TestPoint_201,tag=!InactiveTestPoint_201,distance=..50,x=-19995.0,y=11.0,z=21.0] positioned -20000 ~ 16 unless entity @e[type=area_effect_cloud,tag=Candidate_201,tag=InactiveCandidate_201,tag=!AlreadyTestPoint_201,dx=15,dy=0,dz=15] run function reversi_201:game/turn/ai/advanced/deep.further_back
         execute if score #StoneQuantity ReversiData_201 >= #AI-LastAlgorithm ReversiData_201 unless score #RemainingDepth ReversiData_201 = #LastDepth ReversiData_201 at @e[type=area_effect_cloud,tag=TestPoint_201,tag=!InactiveTestPoint_201,distance=..50,x=-19995.0,y=11.0,z=21.0] positioned -20000 ~ 16 if entity @e[type=area_effect_cloud,tag=Candidate_201,tag=InactiveCandidate_201,tag=!AlreadyTestPoint_201,dx=15,dy=0,dz=15] run function reversi_201:game/turn/ai/advanced/deep.another_point
         execute if score #StoneQuantity ReversiData_201 >= #AI-LastAlgorithm ReversiData_201 unless score #RemainingDepth ReversiData_201 = #LastDepth ReversiData_201 at @e[type=area_effect_cloud,tag=TestPoint_201,tag=!InactiveTestPoint_201,distance=..50,x=-19995.0,y=11.0,z=21.0] positioned -20000 ~ 16 unless entity @e[type=area_effect_cloud,tag=Candidate_201,tag=InactiveCandidate_201,tag=!AlreadyTestPoint_201,dx=15,dy=0,dz=15] run function reversi_201:game/turn/ai/advanced/deep.further_back
-#else
+# else
     scoreboard players set #else ReversiData_201 1

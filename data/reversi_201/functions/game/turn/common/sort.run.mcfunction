@@ -7,9 +7,9 @@
 #   reversi_201:game/turn/ai/advanced/deep.end
 #   reversi_201:game/turn/ai/advanced/deep.back
 
-#init all = 0
+# init all = 0
     scoreboard players set @e[type=area_effect_cloud,tag=Candidate_201,tag=!InactiveCandidate_201,distance=..50,x=-19995.0,y=11.0,z=21.0] SortValue_201 0
-#加算
+# 加算
     execute at @e[type=area_effect_cloud,tag=Candidate_201,tag=!InactiveCandidate_201,distance=..50,x=-19995.0,y=11.0,z=21.0] as @e[type=area_effect_cloud,tag=Candidate_201,tag=!InactiveCandidate_201,distance=..50,x=-19995.0,y=11.0,z=21.0] if score @s Evaluation_201 > @e[type=area_effect_cloud,tag=Candidate_201,tag=!InactiveCandidate_201,distance=..0.01,sort=nearest,limit=1] Evaluation_201 run scoreboard players add @s SortValue_201 1
-#値の衝突を無くす
+# 値の衝突を無くす
     execute at @e[type=area_effect_cloud,tag=Candidate_201,tag=!InactiveCandidate_201,distance=..50,x=-19995.0,y=11.0,z=21.0] as @e[type=area_effect_cloud,tag=Candidate_201,tag=!InactiveCandidate_201,distance=..50,x=-19995.0,y=11.0,z=21.0,sort=random] run function reversi_201:game/turn/common/sort.duplicated_shift

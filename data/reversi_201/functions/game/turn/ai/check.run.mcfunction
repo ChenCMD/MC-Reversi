@@ -6,7 +6,7 @@
 #   reversi_201:game/turn/ai/advanced/deep.recursive.run
 #   reversi_201:game/turn/ai/search.recursive.run
 
-#8方向処理
+# 8方向処理
     execute if score #TurnColor ReversiData_201 matches 0 run execute rotated 000 0 positioned ^ ^ ^1 align xz positioned ~0.5 ~ ~0.5 if block ~ ~ ~ white_stained_glass run function reversi_201:game/turn/ai/check.recursive
     execute if score #TurnColor ReversiData_201 matches 1 run execute rotated 000 0 positioned ^ ^ ^1 align xz positioned ~0.5 ~ ~0.5 if block ~ ~ ~ black_stained_glass run function reversi_201:game/turn/ai/check.recursive
     tag @s remove isSuccessLine_201

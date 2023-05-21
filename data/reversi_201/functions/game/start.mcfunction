@@ -4,6 +4,6 @@
 #
 # @within function reversi_201:menu/action/main.start
 
-#開始
+# 開始
     function reversi_201:game/start.common
     schedule function reversi_201:game/turn/turn_checker 1s

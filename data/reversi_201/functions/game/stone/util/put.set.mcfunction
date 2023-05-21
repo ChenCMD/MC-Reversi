@@ -7,10 +7,10 @@
 #   reversi_201:game/turn/ai/advanced/deep.another_point
 
 # summon falling_block ~ ~ ~ {BlockState:{Name:"minecraft:yellow_stained_glass"},NoGravity:1b,Time:579}
-#カーソル位置に石
+# カーソル位置に石
     execute if score #MoreDepthTurnColor ReversiData_201 matches 0 run setblock ~ ~ ~ black_stained_glass
     execute if score #MoreDepthTurnColor ReversiData_201 matches 1 run setblock ~ ~ ~ white_stained_glass
-#石の判定
+# 石の判定
     execute rotated 000 0 positioned ^ ^ ^1 align xz positioned ~0.5 ~ ~0.5 unless block ~ ~ ~ orange_stained_glass unless blocks ^ ^ ^-1.2071 ^ ^ ^-1.2071 ~ ~ ~ all run function reversi_201:game/stone/util/put.check
     scoreboard players set #isSuccess ReversiData_201 0
     execute rotated 045 0 positioned ^ ^ ^1 align xz positioned ~0.5 ~ ~0.5 unless block ~ ~ ~ orange_stained_glass unless blocks ^ ^ ^-1.2071 ^ ^ ^-1.2071 ~ ~ ~ all run function reversi_201:game/stone/util/put.check

@@ -4,7 +4,7 @@
 #
 # @within function reversi_201:game/start.common
 
-#リセット
+# リセット
     tp @e[type=sheep,tag=StoneSheep_201] ~ ~-200 ~
     kill @e[type=sheep,tag=StoneSheep_201]
     execute as @e[tag=Entity_201,tag=!Corner_201,tag=!PreCorner_201] at @s run tp @s ~ ~-200 ~

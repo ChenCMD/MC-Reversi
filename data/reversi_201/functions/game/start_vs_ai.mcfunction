@@ -6,7 +6,7 @@
 #   reversi_201:menu/action/main.start
 #   reversi_201:menu/action/main.start
 
-#開始
+# 開始
     function reversi_201:game/start.common
     #AIの行動変化タイミング定義
         scoreboard players set #AI-LastAlgorithm ReversiData_201 61
