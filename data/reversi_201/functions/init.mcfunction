@@ -107,5 +107,6 @@ execute unless score $Think.COUNT ReversiData_201 = $Think.COUNT ReversiData_201
 execute unless score $Think.MAX ReversiData_201 = $Think.MAX ReversiData_201 run scoreboard players set $Think.MAX ReversiData_201 -1
 execute unless score #Think ReversiData_201 = #Think ReversiData_201 run scoreboard players set #Think ReversiData_201 -1
 execute unless score $isolation ReversiData_201 = $isolation ReversiData_201 run scoreboard players set $isolation ReversiData_201 0
+execute unless score $TickThroughput ReversiData_201 = $TickThroughput ReversiData_201 run scoreboard players set $TickThroughput ReversiData_201 256
 team modify NoCollision_201 collisionRule never
 team modify NoCollision_201 seeFriendlyInvisibles false
