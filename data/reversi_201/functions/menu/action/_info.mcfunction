@@ -4,7 +4,7 @@
 #
 # @within function reversi_201:menu/select
 
-execute if score @s hologram_id_001 matches 2030 run tellraw @s [{"text":"[INFO] ","color":"green"},{"text":"AI戦とは？\nこのリバーシはAI戦をサポートしています。\nAIを白または黒に配置し、挑戦することが可能です。","color":"white"}]
+execute if score @s hologram_id_001 matches 2030 run tellraw @s [{"text":"[INFO] ","color":"green"},{"text":"Coming soon...","color":"white"}]
 execute if score @s hologram_id_001 matches 2032 run tellraw @s [{"text":"[INFO] ","color":"green"},{"text":"長考とは？\nこのリバーシは持ち時間を設定することが可能です。\n全体でのL秒,秒読みのS秒を設定できます。","color":"white"}]
 execute if score @s hologram_id_001 matches 2035 run tellraw @s [{"text":"[INFO] ","color":"green"},{"text":"ﾒｪｪｪｪｪｪｪｪ","color":"white"}]
 execute if score @s hologram_id_001 matches 2037 run tellraw @s [{"text":"[INFO] ","color":"green"},{"text":"盤面隔離とは？\n盤面エリアと観戦エリアと隔離することが可能です。\n観戦プレイヤーが多い場合等に有用な設定です。","color":"white"}]
