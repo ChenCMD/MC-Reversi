@@ -49,6 +49,7 @@ bossbar set reversi_201:player2_201 visible true
 # @within function reversi_201:*
 # @within function reversi_201:menu/**
     #declare storage reversi_201:menu
+    #declare score_holder $SkinMenuPage
     #declare score_holder $Current SessionID_201
     scoreboard objectives add SessionID.B_201 dummy {"text":"(201)セッションのID"}
     scoreboard objectives add SessionID.W_201 dummy {"text":"(201)セッションのID"}
@@ -58,7 +59,9 @@ data modify storage reversi_201:menu Default.Skin append value {Offset:[2.4f,1.5
 data modify storage reversi_201:menu Default.Skin append value {Offset:[3.2f,1.5f],Setting:{CursorCollider:1b,TextInterpret:1b,TextSpaceWidth:0.22f},HologramID:2001,Text:['{"text":"メ","color":"white","font":"uniform"}','{"text":"ニ","color":"white","font":"uniform"}','{"text":"ュ","color":"white","font":"uniform"}','{"text":"ー","color":"white","font":"uniform"}']}
 data modify storage reversi_201:menu Default.Skin append value {Offset:[4.2f,1.5f],Setting:{CursorCollider:1b,TextInterpret:1b,TextSpaceWidth:0.22f},HologramID:2002,Text:['{"text":"設","color":"white","font":"uniform"}','{"text":"定","color":"white","font":"uniform"}']}
 
-data modify storage reversi_201:menu Default.Skin append value {Offset:[3.31f,3.0f],Setting:{CursorCollider:0b,TextInterpret:1b,TextSpaceWidth:0.22f},HologramID:2000,Text:['{"text":"開","bold":true,"font":"uniform"}','{"text":"発","bold":true,"font":"uniform"}','{"text":"中","bold":true,"font":"uniform"}']}
+data modify storage reversi_201:menu Default.Skin append value {Offset:[3.5f,2.5f],Setting:{CursorCollider:0b,TextInterpret:1b,TextSpaceWidth:0.22f,TextAlign:"Center"},HologramID:2040,Text:['{"text":"選","font":"uniform"}','{"text":"択","font":"uniform"}','{"text":"中","font":"uniform"}','{"text":"の","font":"uniform"}','{"text":"ス","font":"uniform"}','{"text":"キ","font":"uniform"}','{"text":"ン","font":"uniform"}']}
+# data modify storage reversi_201:menu Default.Skin append value {Offset:[3.5f,3.7f],Setting:{CursorCollider:1b,TextInterpret:1b,TextSpaceWidth:0.22f,TextAlign:"Center"},HologramID:2041,Text:['{"text":"ス","font":"uniform"}','{"text":"キ","font":"uniform"}','{"text":"ン","font":"uniform"}','{"text":"ガ","font":"uniform"}','{"text":"チ","font":"uniform"}','{"text":"ャ","font":"uniform"}','{"text":"を","font":"uniform"}','{"text":"引","font":"uniform"}','{"text":"く","font":"uniform"}']}
+# data modify storage reversi_201:menu Default.Skin append value {Offset:[3.5f,4.0f],Setting:{CursorCollider:1b,TextInterpret:1b,TextSpaceWidth:0.15f,TextAlign:"Center"},HologramID:2041,Text:['{"text":"(","font":"uniform"}','{"text":"5","font":"uniform"}','{"text":"0","font":"uniform"}','{"text":"0","font":"uniform"}','{"text":"0","font":"uniform"}','{"text":"ミ","font":"uniform"}','{"text":"ニ","font":"uniform"}','{"text":")","font":"uniform"}']}
 
 data modify storage reversi_201:menu Default.Menu set value []
 data modify storage reversi_201:menu Default.Menu append value {Offset:[2.4f,1.5f],Setting:{CursorCollider:1b,TextInterpret:1b,TextSpaceWidth:0.22f},HologramID:2000,Text:['{"text":"ス","color":"white","font":"uniform"}','{"text":"キ","color":"white","font":"uniform"}','{"text":"ン","color":"white","font":"uniform"}']}
@@ -99,7 +102,7 @@ data modify storage reversi_201:menu Default.Setting append value {Offset:[2.2f,
     scoreboard objectives add StoneSkin_201 dummy {"text":"石の見た目の選択"}
     team add NoCollision_201
 
-execute unless score #CurrentSkin StoneSkin_201 = #CurrentSkin StoneSkin_201 run scoreboard players set #CurrentSkin StoneSkin_201 2001
+execute unless score #CurrentSkin StoneSkin_201 = #CurrentSkin StoneSkin_201 run scoreboard players set #CurrentSkin StoneSkin_201 2000
 execute unless score $sheep ReversiData_201 = $sheep ReversiData_201 run scoreboard players set $sheep ReversiData_201 0
 execute unless score $vsAI ReversiData_201 = $vsAI ReversiData_201 run scoreboard players set $vsAI ReversiData_201 -1
 execute unless score $AI-Lv ReversiData_201 = $AI-Lv ReversiData_201 run scoreboard players set $AI-Lv ReversiData_201 3
